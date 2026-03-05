@@ -1,5 +1,10 @@
 "use client";
-import { heading2Style, smallMutedText } from "@/styles/headingStyle";
+import {
+  heading2Style,
+  heading2StyleBelowLargeScreen,
+  smallMutedText,
+  smallMutedTextBelowLargeScreen,
+} from "@/styles/headingStyle";
 import {
   Box,
   Card,
@@ -8,11 +13,15 @@ import {
   Grid,
   Paper,
   Typography,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 
 const ValuePropositionSection = () => {
+  const theme = useTheme();
+  const belowLargeScreen = useMediaQuery(theme.breakpoints.down("lg"));
   const facts = [
     {
       label: "47% rely on manual tools for key financial decisions",
@@ -33,20 +42,33 @@ const ValuePropositionSection = () => {
         elevation={0}
         sx={{
           padding: 4,
-          paddingX: 12,
+          paddingX: { xs: 4, md: 12 },
           borderRadius: 3,
           backgroundColor: "#f3f4f6",
         }}
       >
         <Grid container spacing={4}>
           <Grid size={12}>
-            <Typography variant="body2" style={smallMutedText}>
+            <Typography
+              variant="body2"
+              style={
+                !belowLargeScreen
+                  ? smallMutedText
+                  : smallMutedTextBelowLargeScreen
+              }
+            >
               SMARTER TEAMS ARE MOVING TO CONNECTED OPERATIONS AND FINANCE.
             </Typography>
           </Grid>
 
           <Grid size={{ xs: 12, md: 6 }}>
-            <Typography style={heading2Style}>
+            <Typography
+              style={
+                !belowLargeScreen
+                  ? heading2Style
+                  : heading2StyleBelowLargeScreen
+              }
+            >
               “Most businesses don’t have a data problem — they have a systems
               problem. ProsERP brings finance and operations into one clear
               source of truth.”

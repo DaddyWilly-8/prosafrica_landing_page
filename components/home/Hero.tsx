@@ -1,11 +1,18 @@
 "use client";
 
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography, useMediaQuery, useTheme } from "@mui/material";
 import DemoButton from "../buttons/DemoButton";
 import ContactUsButtom from "../buttons/ContactUsButtom";
-import { hedingStyle, subHeadingStyle } from "@/styles/headingStyle";
+import {
+  hedingStyle,
+  hedingStyleBelowLargeScreen,
+  subHeadingStyle,
+  subHeadingStyleBelowLargeScreen,
+} from "@/styles/headingStyle";
 
 const Hero = () => {
+  const theme = useTheme();
+  const belowLargeScreen = useMediaQuery(theme.breakpoints.down("lg"));
   return (
     <Box
       sx={{
@@ -15,12 +22,12 @@ const Hero = () => {
         height: "90vh",
         backgroundColor: "black",
         position: "relative",
+        backgroundImage:
+          "url('/assets/images/three-happy-multiracial-colleagues-looking-down-smiling-while-using-digital-tablet-office.jpg')",
+        backgroundSize: "cover",
+        backgroundPositionY: "top",
       }}
     >
-      <img
-        src="/assets/images/three-happy-multiracial-colleagues-looking-down-smiling-while-using-digital-tablet-office.jpg"
-        style={{ opacity: 0.7, position: "absolute", top: 0, left: 0 }}
-      />
       <Box
         zIndex={2}
         width={{ xs: "100%", md: "40%" }}
@@ -36,10 +43,16 @@ const Hero = () => {
           paddingBottom: 2,
         }}
       >
-        <Typography style={hedingStyle}>
+        <Typography
+          style={belowLargeScreen ? hedingStyleBelowLargeScreen : hedingStyle}
+        >
           One ERP to run real operations end to end
         </Typography>
-        <Typography style={subHeadingStyle}>
+        <Typography
+          style={
+            belowLargeScreen ? subHeadingStyleBelowLargeScreen : subHeadingStyle
+          }
+        >
           Run your entire operations with clarity and confidence
         </Typography>
         <Stack direction="row" spacing={2} mt={4}>

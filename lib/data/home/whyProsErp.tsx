@@ -25,8 +25,8 @@ export const whyProsErp = [
   {
     icons: (
       <svg
-        width="32"
-        height="16"
+        width="48"
+        height="48"
         viewBox="0 0 32 16"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -48,8 +48,8 @@ export const whyProsErp = [
   {
     icons: (
       <svg
-        width="28"
-        height="28"
+        width="48"
+        height="48"
         viewBox="0 0 28 28"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -140,8 +140,8 @@ export const whyProsErp = [
   {
     icons: (
       <svg
-        width="24"
-        height="24"
+        width="48"
+        height="48"
         viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

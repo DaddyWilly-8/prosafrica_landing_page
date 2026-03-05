@@ -2,22 +2,44 @@
 
 import {
   heading2Style,
+  heading2StyleBelowLargeScreen,
   smallMutedText,
+  smallMutedTextBelowLargeScreen,
   subHeadingStyle,
 } from "@/styles/headingStyle";
-import { Badge, Box, Grid, Paper, Stack, Typography } from "@mui/material";
+import {
+  Badge,
+  Box,
+  Grid,
+  Paper,
+  Stack,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import DemoButton from "../buttons/DemoButton";
 import ContactUsButtom from "../buttons/ContactUsButtom";
 import { IdeasInsights } from "@/lib/data/home/ideasAndInsights";
 
 const IdeasAndInsights = () => {
+  const theme = useTheme();
+  const belowLargeScreen = useMediaQuery(theme.breakpoints.down("lg"));
   return (
-    <Box component="section" mt={24}>
-      <Typography style={heading2Style} width={{ xs: "100%", md: "40%" }}>
+    <Box component="section" mt={{ xs: 12, md: 24 }}>
+      <Typography
+        style={
+          !belowLargeScreen ? heading2Style : heading2StyleBelowLargeScreen
+        }
+        width={{ xs: "100%", md: "40%" }}
+      >
         Ideas, insights, and updates from our team
       </Typography>
       <Typography
-        style={{ ...smallMutedText, color: "black" }}
+        style={
+          !belowLargeScreen
+            ? { ...smallMutedText, color: "black" }
+            : { ...smallMutedTextBelowLargeScreen, color: "black" }
+        }
         width={{ xs: "100%", md: "40%" }}
         mt={2}
       >
@@ -64,7 +86,17 @@ const IdeasAndInsights = () => {
                 >
                   <Typography style={smallMutedText}>{idea.date}</Typography>
                   <Badge variant="dot" color="primary" />
-                  <Badge color="default" badgeContent={idea.badge} />
+                  <span
+                    style={{
+                      padding: 6,
+                      backgroundColor: "#d1d5dc",
+                      borderRadius: 30,
+                      width: "fit-content",
+                      fontSize: 12,
+                    }}
+                  >
+                    {idea.badge}
+                  </span>
                 </Stack>
                 <Typography
                   style={{

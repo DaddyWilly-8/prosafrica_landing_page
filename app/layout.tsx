@@ -27,10 +27,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
       >
         <Header />
-        <main className=" px-8 pb-10 mt-28">{children}</main>
+        <main className="px-2 md:px-8 pb-10 mt-20 md:mt-28">{children}</main>
         <Footer />
       </body>
     </html>

@@ -2,7 +2,7 @@
 
 import { Button, useMediaQuery, useTheme } from "@mui/material";
 
-const DemoButton = () => {
+const ViewSolnButton = () => {
   const theme = useTheme();
   const belowLargeScreen = useMediaQuery(theme.breakpoints.down("lg"));
 
@@ -14,9 +14,12 @@ const DemoButton = () => {
         paddingX: 4,
         backgroundColor: "black",
         color: "white",
+        position: "absolute",
+        bottom: 8,
+        mb: 4,
       }}
     >
-      Request a demo
+      View Solution
     </Button>
   ) : (
     <Button
@@ -27,11 +30,12 @@ const DemoButton = () => {
         backgroundColor: "black",
         color: "white",
         fontSize: 12,
+        mt: 4,
       }}
     >
-      Request a demo
+      View Solution
     </Button>
   );
 };
 
-export default DemoButton;
+export default ViewSolnButton;

@@ -1,17 +1,27 @@
 "use client";
 
-import { Button, Grid, Stack } from "@mui/material";
+import {
+  Button,
+  Grid,
+  IconButton,
+  Stack,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import React from "react";
 import { Logo } from "../logo/Logo";
 import Link from "next/link";
 import DemoButton from "../buttons/DemoButton";
+import { KeyboardArrowDown, Menu } from "@mui/icons-material";
 
 const Header = () => {
+  const theme = useTheme();
+  const belowLargeScreen = useMediaQuery(theme.breakpoints.down("lg"));
   const headerMenuItems = [
-    { label: "Product", href: "#" },
-    { label: "Pricing", href: "#" },
-    { label: "Company", href: "#" },
-    { label: "Case Studies", href: "#" },
+    { label: "Product", href: "#", dropDown: true },
+    { label: "Pricing", href: "#", dropDown: false },
+    { label: "Company", href: "#", dropDown: false },
+    { label: "Case Studies", href: "#", dropDown: true },
   ];
   return (
     <Grid
@@ -27,23 +37,42 @@ const Header = () => {
       }}
       zIndex={99}
     >
-      <Grid size={3}>
+      <Grid size={{ xs: 5, md: 3 }}>
         <Logo mode="light" />
       </Grid>
-      <Grid size={7} justifyContent="center">
-        <Stack direction="row" spacing={2} alignItems="center">
-          {headerMenuItems.map((item, index) => {
-            return (
-              <Link key={index} href={item.href}>
-                {item.label}
-              </Link>
-            );
-          })}
-        </Stack>
-      </Grid>
-      <Grid size={2}>
-        <DemoButton />
-      </Grid>
+      {!belowLargeScreen ? (
+        <>
+          <Grid size={7} justifyContent="center">
+            <Stack direction="row" spacing={2} alignItems="center">
+              {headerMenuItems.map((item, index) => {
+                return (
+                  <Link key={index} href={item.href}>
+                    {item.label}
+                    {item.dropDown && (
+                      <KeyboardArrowDown
+                        sx={{ fontSize: 18, color: "black" }}
+                      />
+                    )}
+                  </Link>
+                );
+              })}
+            </Stack>
+          </Grid>
+          <Grid size={{ xs: 5, md: 2 }}>
+            <DemoButton />
+          </Grid>
+        </>
+      ) : (
+        <Grid size={5}></Grid>
+      )}
+
+      {belowLargeScreen && (
+        <Grid size={2}>
+          <IconButton>
+            <Menu sx={{ color: "black" }} />
+          </IconButton>
+        </Grid>
+      )}
     </Grid>
   );
 };

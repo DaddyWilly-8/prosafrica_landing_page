@@ -3,15 +3,32 @@
 import { Tools } from "@/lib/data/home/tools";
 import {
   heading2Style,
+  heading2StyleBelowLargeScreen,
   smallMutedText,
   subHeadingStyle,
 } from "@/styles/headingStyle";
-import { Box, Button, Grid, Paper, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Grid,
+  Paper,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
+import ViewSolnButton from "../buttons/ViewSolnButton";
 
 const ManagementTools = () => {
+  const theme = useTheme();
+  const belowLargeScreen = useMediaQuery(theme.breakpoints.down("lg"));
   return (
-    <Box component="section">
-      <Typography style={heading2Style} width={{ xs: "100%", md: "50%" }}>
+    <Box component="section" mt={10}>
+      <Typography
+        style={
+          !belowLargeScreen ? heading2Style : heading2StyleBelowLargeScreen
+        }
+        width={{ xs: "100%", md: "50%" }}
+      >
         Integrate management tools that keep operations connected and controlled
       </Typography>
 
@@ -32,14 +49,16 @@ const ManagementTools = () => {
                 height: 400,
                 backgroundColor: "black",
                 position: "relative",
+                display: "flex",
               }}
             >
               <img
                 src={tool.image}
                 style={{
                   opacity: 0.7,
-                  position: "absolute",
+                  position: "relative",
                   objectFit: "cover",
+                  width: "100%",
                   top: 0,
                   left: 0,
                 }}
@@ -53,7 +72,7 @@ const ManagementTools = () => {
                   flexDirection: "column",
                   alignItems: "start",
                   justifyContent: "end",
-                  position: "relative",
+                  position: "absolute",
                   textAlign: "left",
                   paddingBottom: 2,
                   paddingX: 4,
@@ -86,19 +105,7 @@ const ManagementTools = () => {
                 {tool.result}
               </Typography>
 
-              <Button
-                sx={{
-                  borderRadius: 10,
-                  paddingY: 2,
-                  paddingX: 2,
-                  backgroundColor: "black",
-                  color: "white",
-                  position: "absolute",
-                  bottom: 8,
-                }}
-              >
-                View Solution
-              </Button>
+              <ViewSolnButton />
             </Paper>
           </Grid>
         </Grid>

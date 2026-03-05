@@ -3,7 +3,9 @@
 import { Teams } from "@/lib/data/home/teams";
 import {
   heading2Style,
+  heading2StyleBelowLargeScreen,
   smallMutedText,
+  smallMutedTextBelowLargeScreen,
   subHeadingStyle,
 } from "@/styles/headingStyle";
 import {
@@ -19,6 +21,8 @@ import {
   Paper,
   Stack,
   Typography,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import React from "react";
 import { blob } from "stream/consumers";
@@ -26,15 +30,28 @@ import DemoButton from "../buttons/DemoButton";
 import ContactUsButtom from "../buttons/ContactUsButtom";
 
 const JoinTeams = () => {
+  const theme = useTheme();
+  const belowLargeScreen = useMediaQuery(theme.breakpoints.down("lg"));
   return (
     <Box component="section">
-      <Grid container mt={20}>
+      <Grid container mt={{ xs: 10, md: 20 }}>
         <Grid size={{ xs: 12, md: 6 }}></Grid>
         <Grid size={{ xs: 12, md: 6 }} pr={{ xs: 4, md: 12 }}>
-          <Typography style={heading2Style}>
+          <Typography
+            style={
+              !belowLargeScreen ? heading2Style : heading2StyleBelowLargeScreen
+            }
+          >
             Join teams Everything you need to run your business — in one ERP.
           </Typography>
-          <Typography style={smallMutedText} mt={4}>
+          <Typography
+            style={
+              !belowLargeScreen
+                ? smallMutedText
+                : smallMutedTextBelowLargeScreen
+            }
+            mt={4}
+          >
             ProsERP is designed to support daily operational workflows while
             maintaining strong financial discipline. Every transaction,
             movement, and activity feeds directly into one accurate system of
@@ -42,8 +59,13 @@ const JoinTeams = () => {
           </Typography>
         </Grid>
       </Grid>
-      <Grid container mt={20}>
-        <Grid size={{ xs: 12, md: 6 }} position="sticky" top={20}>
+      <Grid container mt={{ xs: 10, md: 20 }}>
+        <Grid
+          size={{ xs: 12, md: 6 }}
+          height="100%"
+          position={{ xs: "relative", md: "sticky" }}
+          top={{ xs: 0, md: 80 }}
+        >
           <Stack direction="row" spacing={1}>
             <svg
               width="19"
@@ -71,20 +93,28 @@ const JoinTeams = () => {
               sx={{ backgroundColor: "#f9fafb ", marginTop: 8 }}
             >
               <Box
-                height={350}
+                height={{ xs: 250, md: 350 }}
                 sx={{
                   backgroundColor: "#99a1af ",
                   borderRadius: 3,
                   overflow: "hidden",
                 }}
               ></Box>
-              <Box component="div" paddingX={8} paddingY={4}>
+              <Box component="div" paddingX={{ xs: 4, md: 8 }} paddingY={4}>
                 <Typography
-                  style={{
-                    ...subHeadingStyle,
-                    color: "black",
-                    fontSize: 18,
-                  }}
+                  style={
+                    !belowLargeScreen
+                      ? {
+                          ...subHeadingStyle,
+                          color: "black",
+                          fontSize: 18,
+                        }
+                      : {
+                          ...subHeadingStyle,
+                          color: "black",
+                          fontSize: 16,
+                        }
+                  }
                 >
                   {team.title}
                 </Typography>

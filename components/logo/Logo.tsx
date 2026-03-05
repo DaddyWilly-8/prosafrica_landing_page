@@ -1,4 +1,4 @@
-import { Box, SxProps, Theme } from "@mui/material";
+import { Box, SxProps, Theme, useMediaQuery, useTheme } from "@mui/material";
 import Link from "@mui/material/Link";
 import Image from "next/image";
 
@@ -8,34 +8,22 @@ type LogoProps = {
   sx?: SxProps<Theme>;
 };
 const Logo = ({ mini = false, mode = "light", sx }: LogoProps) => {
+  const theme = useTheme();
+  const belowLargeScreen = useMediaQuery(theme.breakpoints.down("lg"));
   return (
     <Box component="div" sx={{ display: "inline-flex", ...sx }}>
       <Link href={`/`}>
-        {!mini ? (
-          <Image
-            src={
-              mode === "light"
-                ? `/assets/images/logos/logo.png`
-                : `/assets/images/logos/proserp-white.png`
-            }
-            alt="Jumbo React"
-            width={110}
-            height={35}
-            style={{ verticalAlign: "middle" }}
-          />
-        ) : (
-          <Image
-            src={
-              mode === "light"
-                ? `/assets/images/logo-short.png`
-                : `/assets/images/logo-short-white.png`
-            }
-            alt="Jumbo React"
-            width={35}
-            height={35}
-            style={{ verticalAlign: "middle" }}
-          />
-        )}
+        <Image
+          src={
+            mode === "light"
+              ? `/assets/images/logos/logo.png`
+              : `/assets/images/logos/proserp-white.png`
+          }
+          alt="Jumbo React"
+          width={belowLargeScreen ? 70 : 110}
+          height={35}
+          style={{ verticalAlign: "middle" }}
+        />
       </Link>
     </Box>
   );

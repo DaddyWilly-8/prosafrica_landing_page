@@ -13,11 +13,11 @@ const Footer = () => {
         minHeight: "90vh",
         backgroundColor: "black",
         color: "white",
-        paddingX: 8,
-        paddingY: 10,
+        paddingX: { xs: 4, md: 8 },
+        paddingY: { xs: 10, md: 12 },
       }}
     >
-      <Grid container>
+      <Grid container rowSpacing={4}>
         <Grid size={{ xs: 12, md: 7 }}>
           <Stack spacing={2}>
             <img
@@ -81,7 +81,14 @@ const Footer = () => {
           </Stack>
         </Grid>
         <Grid container size={{ xs: 12, md: 5 }} spacing={4}>
-          <Grid size={6}>
+          <Grid
+            size={{ xs: 12, md: 6 }}
+            sx={{
+              pb: 2,
+              borderBottomWidth: { xs: 1, md: 0 },
+              borderBottomColor: "gray",
+            }}
+          >
             <Stack>
               <Typography style={{ ...subHeadingStyle, fontSize: 18 }}>
                 Controlled expense tracking
@@ -103,7 +110,14 @@ const Footer = () => {
               </Typography>
             </Stack>
           </Grid>
-          <Grid size={6}>
+          <Grid
+            size={{ xs: 12, md: 6 }}
+            sx={{
+              pb: 2,
+              borderBottomWidth: { xs: 1, md: 0 },
+              borderBottomColor: "gray",
+            }}
+          >
             <Stack>
               <Link href="#" style={{ ...subHeadingStyle, fontSize: 16 }}>
                 Case Studies
@@ -126,9 +140,10 @@ const Footer = () => {
       </Grid>
 
       <Stack
-        mt={20}
+        mt={{ xs: 10, md: 20 }}
         display="flex"
         flexDirection={{ xs: "column", md: "row" }}
+        gap={{ xs: 4, md: 0 }}
         alignItems="center"
         justifyContent="space-between"
         sx={{ borderBottomWidth: 2, borderBottomColor: "gray", py: 8 }}

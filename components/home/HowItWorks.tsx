@@ -2,13 +2,25 @@
 
 import {
   heading2Style,
+  heading2StyleBelowLargeScreen,
   smallMutedText,
   subHeadingStyle,
 } from "@/styles/headingStyle";
-import { Box, Divider, List, ListItem, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Divider,
+  List,
+  ListItem,
+  Stack,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import React from "react";
 
 export const HowItWorks = () => {
+  const theme = useTheme();
+  const belowLargeScreen = useMediaQuery(theme.breakpoints.down("lg"));
   const steps = [
     {
       title: "Understand Your Operation",
@@ -53,7 +65,14 @@ export const HowItWorks = () => {
           borderRadius: 3,
         }}
       >
-        <Typography style={{ ...heading2Style, color: "white" }} color="white">
+        <Typography
+          style={
+            !belowLargeScreen
+              ? { ...heading2Style, color: "white" }
+              : { ...heading2StyleBelowLargeScreen, color: "white" }
+          }
+          color="white"
+        >
           How it works
         </Typography>
         <List sx={{ mt: 4 }}>

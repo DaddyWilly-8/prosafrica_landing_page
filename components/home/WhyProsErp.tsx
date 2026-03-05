@@ -1,10 +1,23 @@
 "use client";
 
 import { whyProsErp } from "@/lib/data/home/whyProsErp";
-import { heading2Style, smallMutedText } from "@/styles/headingStyle";
-import { Box, Grid, Paper, Typography } from "@mui/material";
+import {
+  heading2Style,
+  heading2StyleBelowLargeScreen,
+  smallMutedText,
+} from "@/styles/headingStyle";
+import {
+  Box,
+  Grid,
+  Paper,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 
 const WhyProsErp = () => {
+  const theme = useTheme();
+  const belowLargeScreen = useMediaQuery(theme.breakpoints.down("lg"));
   return (
     <Box component="section">
       <Grid container spacing={2}>
@@ -32,8 +45,8 @@ const WhyProsErp = () => {
             <Box
               zIndex={2}
               width={{ xs: "100%", md: "100%" }}
+              height={{ xs: "60vh", md: "100%" }}
               sx={{
-                height: "100%",
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "start",
@@ -45,7 +58,13 @@ const WhyProsErp = () => {
                 pt: 4,
               }}
             >
-              <Typography style={{ ...heading2Style, color: "white" }}>
+              <Typography
+                style={
+                  !belowLargeScreen
+                    ? { ...heading2Style, color: "white" }
+                    : { ...heading2StyleBelowLargeScreen, color: "white" }
+                }
+              >
                 Why businesses choose ProsERP
               </Typography>
             </Box>
@@ -66,7 +85,11 @@ const WhyProsErp = () => {
               >
                 {item.icons}
                 <Typography
-                  style={heading2Style}
+                  style={
+                    !belowLargeScreen
+                      ? heading2Style
+                      : heading2StyleBelowLargeScreen
+                  }
                   mt={4}
                   width={{ xs: "100%", md: "70%" }}
                 >
