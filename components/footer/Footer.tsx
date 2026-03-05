@@ -3,7 +3,6 @@
 import { smallMutedText, subHeadingStyle } from "@/styles/headingStyle";
 import { Box, Divider, Grid, Stack, Typography } from "@mui/material";
 import Link from "next/link";
-import React from "react";
 
 const Footer = () => {
   return (

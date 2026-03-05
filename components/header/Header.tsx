@@ -13,10 +13,12 @@ import { Logo } from "../logo/Logo";
 import Link from "next/link";
 import DemoButton from "../buttons/DemoButton";
 import { KeyboardArrowDown, Menu } from "@mui/icons-material";
+import { useSideBar } from "@/providers/sidebarProvider";
 
 const Header = () => {
   const theme = useTheme();
   const belowLargeScreen = useMediaQuery(theme.breakpoints.down("lg"));
+  const { isOpen, toggleSideBar } = useSideBar();
   const headerMenuItems = [
     { label: "Product", href: "#", dropDown: true },
     { label: "Pricing", href: "#", dropDown: false },
@@ -37,7 +39,7 @@ const Header = () => {
       }}
       zIndex={99}
     >
-      <Grid size={{ xs: 5, md: 3 }}>
+      <Grid size={{ xs: 5, lg: 3 }}>
         <Logo mode="light" />
       </Grid>
       {!belowLargeScreen ? (
@@ -58,7 +60,7 @@ const Header = () => {
               })}
             </Stack>
           </Grid>
-          <Grid size={{ xs: 5, md: 2 }}>
+          <Grid size={{ xs: 5, lg: 2 }}>
             <DemoButton />
           </Grid>
         </>
@@ -67,8 +69,8 @@ const Header = () => {
       )}
 
       {belowLargeScreen && (
-        <Grid size={2}>
-          <IconButton>
+        <Grid size={2} textAlign="right">
+          <IconButton onClick={toggleSideBar}>
             <Menu sx={{ color: "black" }} />
           </IconButton>
         </Grid>

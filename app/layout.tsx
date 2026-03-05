@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
+import SideBar from "@/components/header/SideBar";
+import { SidebarProvider } from "@/providers/sidebarProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,9 +31,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
       >
-        <Header />
-        <main className="px-2 md:px-8 pb-10 mt-20 md:mt-28">{children}</main>
-        <Footer />
+        <SidebarProvider>
+          <SideBar />
+          <Header />
+          <main className="px-2 md:px-8 pb-10 mt-20 md:mt-28">{children}</main>
+          <Footer />
+        </SidebarProvider>
       </body>
     </html>
   );
