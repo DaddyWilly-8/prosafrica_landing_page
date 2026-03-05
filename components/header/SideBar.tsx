@@ -23,10 +23,11 @@ const SideBar = () => {
     { label: "Pricing", href: "#", dropDown: false },
     { label: "Company", href: "#", dropDown: false },
     { label: "Case Studies", href: "#", dropDown: true },
+    { label: "Contact Us", href: "/contact", dropDown: false },
   ];
 
   const DrawerList = (
-    <Box sx={{ width: 250 }} role="presentation">
+    <Box sx={{ width: 250 }} role="presentation" onClick={toggleSideBar}>
       <List>
         {headerMenuItems.map((item, index) => (
           <ListItem key={index} divider sx={{ paddingY: 2 }}>
@@ -43,7 +44,7 @@ const SideBar = () => {
   );
 
   return (
-    <Drawer anchor="right" open={isOpen} onClose={() => toggleSideBar()}>
+    <Drawer anchor="right" open={isOpen} onClose={toggleSideBar}>
       {DrawerList}
     </Drawer>
   );

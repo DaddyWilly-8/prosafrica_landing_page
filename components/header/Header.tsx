@@ -24,6 +24,7 @@ const Header = () => {
     { label: "Pricing", href: "#", dropDown: false },
     { label: "Company", href: "#", dropDown: false },
     { label: "Case Studies", href: "#", dropDown: true },
+    { label: "Contact Us", href: "/contact", dropDown: false },
   ];
   return (
     <Grid
