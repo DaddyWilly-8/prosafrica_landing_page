@@ -1,5 +1,7 @@
+"use client";
+
 import { Box, SxProps, Theme, useMediaQuery, useTheme } from "@mui/material";
-import Link from "@mui/material/Link";
+import Link from "next/link";
 import Image from "next/image";
 
 type LogoProps = {

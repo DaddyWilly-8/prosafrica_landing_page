@@ -14,6 +14,7 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
+import DemoButton from "../buttons/DemoButton";
 
 const WhyProsErp = () => {
   const theme = useTheme();
@@ -67,6 +68,23 @@ const WhyProsErp = () => {
               >
                 Why businesses choose ProsERP
               </Typography>
+              <Box
+                component="div"
+                sx={{
+                  position: "absolute",
+                  bottom: 20,
+                  left: 0,
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                <DemoButton
+                  text="Get started with ProsErp"
+                  sx={{ backgroundColor: "white", color: "black" }}
+                  onClick={() => alert("button clicked")}
+                />
+              </Box>
             </Box>
           </Box>
         </Grid>
