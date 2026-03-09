@@ -4,8 +4,8 @@ import { Box, Stack, Typography, useMediaQuery, useTheme } from "@mui/material";
 import DemoButton from "../buttons/DemoButton";
 import ContactUsButtom from "../buttons/ContactUsButtom";
 import {
-  hedingStyle,
-  hedingStyleBelowLargeScreen,
+  headingStyle,
+  headingStyleBelowLargeScreen,
   subHeadingStyle,
   subHeadingStyleBelowLargeScreen,
 } from "@/styles/headingStyle";
@@ -44,7 +44,7 @@ const Hero = () => {
         }}
       >
         <Typography
-          style={belowLargeScreen ? hedingStyleBelowLargeScreen : hedingStyle}
+          style={belowLargeScreen ? headingStyleBelowLargeScreen : headingStyle}
         >
           One ERP to run real operations end to end
         </Typography>

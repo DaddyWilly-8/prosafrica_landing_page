@@ -1,5 +1,6 @@
 export const Teams = [
   {
+    id: "trading",
     title:
       "For trading, distribution, retail, and service-based businesses. Manage sales, purchases, and expenses",
     points: [
@@ -13,6 +14,7 @@ export const Teams = [
       '"Result - Clear financial visibility, controlled stock, and better business decisions."',
   },
   {
+    id: "construction",
     title:
       "For construction companies, engineers, and project-driven organizations",
     points: [
@@ -29,6 +31,7 @@ export const Teams = [
       '"Result - Full control from project award to final account — financially and operationally."',
   },
   {
+    id: "fuel",
     title: "For fuel stations and petroleum retail operations.",
     points: [
       "Record sales for every shift",
@@ -42,6 +45,7 @@ export const Teams = [
       '"Result - Accurate fuel control, reduced losses, and complete station visibility."',
   },
   {
+    id: "manufacturers",
     title: "For manufacturers, processors, and production-based businesses.",
     points: [
       "Combine raw materials and production costs",

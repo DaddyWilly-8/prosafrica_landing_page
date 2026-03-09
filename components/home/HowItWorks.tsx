@@ -60,6 +60,7 @@ export const HowItWorks = () => {
         sx={{
           backgroundColor: "black",
           padding: 4,
+          px: 2,
           mt: 4,
           width: { xs: "100%", md: "25%" },
           borderRadius: 3,
@@ -77,32 +78,30 @@ export const HowItWorks = () => {
         </Typography>
         <List sx={{ mt: 4 }}>
           {steps.map((step, index) => (
-            <>
-              <Divider key={index} />
-              <ListItem
-                key={step.title}
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "start",
-                  borderBottomWidth: 1,
-                  borderBottomColor: "gray",
-                }}
+            <ListItem
+              key={step.title}
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "start",
+                borderBottomWidth: 1,
+                borderBottomColor: "gray",
+              }}
+            >
+              <Typography
+                style={{ ...subHeadingStyle, color: "white", fontSize: 20 }}
+                color="white"
               >
-                <Typography
-                  style={{ ...subHeadingStyle, color: "white", fontSize: 20 }}
-                  color="white"
-                >
-                  {step.title}
-                </Typography>
-                <Typography
-                  style={{ ...smallMutedText, color: "gray" }}
-                  color="white"
-                >
-                  {step.description}
-                </Typography>
-              </ListItem>
-            </>
+                {step.title}
+              </Typography>
+              <Typography
+                style={{ ...smallMutedText, color: "gray" }}
+                color="white"
+              >
+                {step.description}
+              </Typography>
+              <Divider sx={{ mt: 2 }} />
+            </ListItem>
           ))}
         </List>
       </Box>

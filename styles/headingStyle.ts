@@ -1,4 +1,4 @@
-export const hedingStyle = {
+export const headingStyle = {
   fontFamily: "Geist",
   fontWeight: 300,
   fontSize: "48px",
@@ -6,7 +6,7 @@ export const hedingStyle = {
   color: "white",
 };
 
-export const hedingStyleBelowLargeScreen = {
+export const headingStyleBelowLargeScreen = {
   fontFamily: "Geist",
   fontWeight: 300,
   fontSize: "36px",

@@ -14,11 +14,13 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 const ContactCard = () => {
   const theme = useTheme();
   const belowLargeScreen = useMediaQuery(theme.breakpoints.down("lg"));
+  const router = useRouter();
   return (
     <Box component="section">
       <Grid container p={4} spacing={{ xs: 4, md: 4, lg: 8 }}>
@@ -66,6 +68,7 @@ const ContactCard = () => {
               with your question
             </Typography>
             <Button
+              onClick={() => router.push("/contact/support")}
               sx={{
                 borderRadius: 10,
                 paddingY: { xs: 1, md: 2 },

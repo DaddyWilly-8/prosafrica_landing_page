@@ -17,6 +17,7 @@ import {
   useTheme,
 } from "@mui/material";
 import ViewSolnButton from "../buttons/ViewSolnButton";
+import DemoButton from "../buttons/DemoButton";
 
 const ManagementTools = () => {
   const theme = useTheme();
