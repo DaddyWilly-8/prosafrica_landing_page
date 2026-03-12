@@ -17,7 +17,9 @@ import { useSideBar } from "@/providers/sidebarProvider";
 
 const Header = () => {
   const theme = useTheme();
-  const belowLargeScreen = useMediaQuery(theme.breakpoints.down("lg"));
+  const belowLargeScreen = useMediaQuery(theme.breakpoints.down("lg"), {
+    noSsr: true,
+  });
   const { isOpen, toggleSideBar } = useSideBar();
   const headerMenuItems = [
     { label: "Product", href: "#", dropDown: true },

@@ -1,5 +1,4 @@
 import FormSection from "@/components/contact/support/FormSection";
-import { Box, Paper } from "@mui/material";
 
 const ContactSupportPage = () => {
   return (

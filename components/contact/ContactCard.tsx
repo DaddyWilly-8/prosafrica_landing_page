@@ -19,7 +19,9 @@ import React from "react";
 
 const ContactCard = () => {
   const theme = useTheme();
-  const belowLargeScreen = useMediaQuery(theme.breakpoints.down("lg"));
+  const belowLargeScreen = useMediaQuery(theme.breakpoints.down("lg"), {
+    noSsr: true,
+  });
   const router = useRouter();
   return (
     <Box component="section">
@@ -121,6 +123,7 @@ const ContactCard = () => {
               Connect with our sales team to request a demo or discuss pricing.
             </Typography>
             <Button
+              onClick={() => router.push("/contact/sales")}
               sx={{
                 borderRadius: 10,
                 paddingY: { xs: 1, md: 2 },

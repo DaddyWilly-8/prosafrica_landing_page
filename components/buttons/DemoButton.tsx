@@ -10,34 +10,22 @@ interface buttonProps {
 
 const DemoButton = ({ text = "Request a demo", sx, onClick }: buttonProps) => {
   const theme = useTheme();
-  const belowLargeScreen = useMediaQuery(theme.breakpoints.down("lg"));
+  const belowLargeScreen = useMediaQuery(theme.breakpoints.down("lg"), {
+    noSsr: true,
+  });
 
-  return !belowLargeScreen ? (
+  return (
     <Button
       sx={{
         borderRadius: 10,
-        paddingY: 2,
-        paddingX: 4,
+        paddingY: { xs: 1, md: 2 },
+        paddingX: { xs: 2, md: 6 },
         backgroundColor: "black",
         color: "white",
+        fontSize: { xs: 10, md: 12 },
         ...sx,
       }}
       onClick={onClick}
-    >
-      {text}
-    </Button>
-  ) : (
-    <Button
-      onClick={onClick}
-      sx={{
-        borderRadius: 10,
-        paddingY: 1,
-        paddingX: 2,
-        backgroundColor: "black",
-        color: "white",
-        fontSize: 12,
-        ...sx,
-      }}
     >
       {text}
     </Button>

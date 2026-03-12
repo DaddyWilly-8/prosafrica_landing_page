@@ -17,6 +17,7 @@ import {
   useTheme,
 } from "@mui/material";
 import Link from "next/link";
+import ContactSupportForm from "./ContactSupportForm";
 
 const FormSection = () => {
   const theme = useTheme();
@@ -32,13 +33,13 @@ const FormSection = () => {
           backgroundColor: "white",
         }}
       >
-        <Grid container>
+        <Grid container spacing={{ xs: 4, md: 12 }}>
           <Grid size={{ xs: 12, md: 4 }}>
             <Typography
               style={
                 !belowLargeScreen
-                  ? { ...headingStyle, color: "black" }
-                  : { ...headingStyleBelowLargeScreen, color: "black" }
+                  ? { ...heading2Style, color: "black" }
+                  : { ...heading2StyleBelowLargeScreen, color: "black" }
               }
             >
               Contact Support
@@ -72,7 +73,9 @@ const FormSection = () => {
               Talk to Sales
             </Link>
           </Grid>
-          <Grid size={{ xs: 12, md: 8 }}></Grid>
+          <Grid size={{ xs: 12, md: 8 }}>
+            <ContactSupportForm />
+          </Grid>
         </Grid>
       </Paper>
     </Box>

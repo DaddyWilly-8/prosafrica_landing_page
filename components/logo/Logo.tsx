@@ -11,7 +11,9 @@ type LogoProps = {
 };
 const Logo = ({ mini = false, mode = "light", sx }: LogoProps) => {
   const theme = useTheme();
-  const belowLargeScreen = useMediaQuery(theme.breakpoints.down("lg"));
+  const belowLargeScreen = useMediaQuery(theme.breakpoints.down("lg"), {
+    noSsr: true,
+  });
   return (
     <Box component="div" sx={{ display: "inline-flex", ...sx }}>
       <Link href={`/`}>

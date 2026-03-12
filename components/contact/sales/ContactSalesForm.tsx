@@ -1,13 +1,23 @@
 "use client";
 
-import { Box, Button, Grid, TextField } from "@mui/material";
+import {
+  Box,
+  Button,
+  FormControl,
+  Grid,
+  InputLabel,
+  MenuItem,
+  Select,
+  SelectChangeEvent,
+  TextField,
+} from "@mui/material";
 import { MuiTelInput } from "mui-tel-input";
 import { useState } from "react";
 import * as yup from "yup";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
-const ContactSupportForm = () => {
+const ContactSalesForm = () => {
   const [phone, setPhone] = useState("");
 
   const handleChange = (newPhone: string) => {
@@ -18,20 +28,30 @@ const ContactSupportForm = () => {
     fullName: yup.string().required("Full name is required"),
     email: yup.string().email("Invalid email").required("Email is required"),
     companyName: yup.string().required("Company name is required"),
+    companySize: yup.string().required("Company size is required"),
+    refferalSource: yup.string().required("Refferal source is required"),
     message: yup.string().required("Message is required"),
   });
 
   const {
     register,
+    control,
     handleSubmit,
+    reset,
     formState: { errors, isSubmitting },
   } = useForm({
+    defaultValues: {
+      companySize: "",
+      refferalSource: "",
+    },
     resolver: yupResolver(validationSchema),
   });
 
   const onSubmit = (data: any) => {
     const finalData = { ...data, phone };
     console.log(finalData);
+    setPhone("");
+    reset();
   };
 
   return (
@@ -76,6 +96,27 @@ const ContactSupportForm = () => {
             />
           </Grid>
           <Grid size={12}>
+            <Controller
+              name="companySize"
+              control={control}
+              render={({ field }) => (
+                <FormControl fullWidth error={!!errors.companySize}>
+                  <InputLabel id="company-size-label">Company Size</InputLabel>
+
+                  <Select
+                    {...field}
+                    labelId="company-size-label"
+                    label="Company Size"
+                  >
+                    <MenuItem value="10">Ten</MenuItem>
+                    <MenuItem value="20">Twenty</MenuItem>
+                    <MenuItem value="30">Thirty</MenuItem>
+                  </Select>
+                </FormControl>
+              )}
+            />
+          </Grid>
+          <Grid size={12}>
             <MuiTelInput
               id="phone-number"
               label="Phone Number"
@@ -83,6 +124,30 @@ const ContactSupportForm = () => {
               onChange={handleChange}
               defaultCountry="TZ"
               fullWidth
+            />
+          </Grid>
+          <Grid size={12}>
+            <Controller
+              name="refferalSource"
+              control={control}
+              render={({ field }) => (
+                <FormControl fullWidth error={!!errors.refferalSource}>
+                  <InputLabel id="refferal-source-label">
+                    How did you hear about us
+                  </InputLabel>
+
+                  <Select
+                    {...field}
+                    labelId="refferal-source-label"
+                    label="How did you hear about us"
+                  >
+                    <MenuItem value="social-media">Social Media</MenuItem>
+                    <MenuItem value="newsletter">Newsletter</MenuItem>
+                    <MenuItem value="friend">Friend</MenuItem>
+                    <MenuItem value="other">Other</MenuItem>
+                  </Select>
+                </FormControl>
+              )}
             />
           </Grid>
           <Grid size={12}>
@@ -119,4 +184,4 @@ const ContactSupportForm = () => {
   );
 };
 
-export default ContactSupportForm;
+export default ContactSalesForm;
