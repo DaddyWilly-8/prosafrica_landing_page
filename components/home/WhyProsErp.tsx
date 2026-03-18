@@ -82,7 +82,6 @@ const WhyProsErp = () => {
                 <DemoButton
                   text="Get started with ProsErp"
                   sx={{ backgroundColor: "white", color: "black" }}
-                  onClick={() => alert("button clicked")}
                 />
               </Box>
             </Box>
