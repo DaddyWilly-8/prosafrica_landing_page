@@ -10,11 +10,6 @@ import {
 } from "@/styles/headingStyle";
 import {
   Box,
-  Card,
-  CardActions,
-  CardContent,
-  CardMedia,
-  Divider,
   Grid,
   List,
   ListItem,
@@ -25,7 +20,6 @@ import {
   useTheme,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { blob } from "stream/consumers";
 import DemoButton from "../buttons/DemoButton";
 import ContactUsButtom from "../buttons/ContactUsButtom";
 
@@ -39,18 +33,26 @@ const JoinTeams = () => {
     element?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
-  const teamCards = document.getElementsByClassName("teamCard");
-  let teamCardRect: number;
-  const updateTeamCardPosition = () => {
-    for (let i = 0; i < teamCards.length; i++) {
-      teamCardRect = teamCards[i].getBoundingClientRect().top;
-      if (teamCardRect <= 130 && teamCardRect >= -600) {
-        setActiveTeam(teamCards[i].id);
-      }
-    }
-  };
+  useEffect(() => {
+    const updateTeamCardPosition = () => {
+      const teamCards = document.getElementsByClassName("teamCard");
 
-  window.addEventListener("scroll", updateTeamCardPosition);
+      for (let i = 0; i < teamCards.length; i++) {
+        const rect = teamCards[i].getBoundingClientRect().top;
+
+        if (rect <= 130 && rect >= -600) {
+          setActiveTeam((teamCards[i] as HTMLElement).id);
+        }
+      }
+    };
+
+    window.addEventListener("scroll", updateTeamCardPosition);
+    updateTeamCardPosition();
+
+    return () => {
+      window.removeEventListener("scroll", updateTeamCardPosition);
+    };
+  }, []);
 
   return (
     <Box component="section">
@@ -79,6 +81,7 @@ const JoinTeams = () => {
           </Typography>
         </Grid>
       </Grid>
+
       <Grid container mt={{ xs: 10, md: 20 }}>
         <Grid
           size={{ xs: 12, md: 6 }}
@@ -92,9 +95,7 @@ const JoinTeams = () => {
             alignItems="center"
             gap={1}
             component="button"
-            onClick={() => {
-              scrollCardToTop("trading");
-            }}
+            onClick={() => scrollCardToTop("trading")}
             sx={{ cursor: "pointer" }}
           >
             {activeTeam === "trading" && (
@@ -113,15 +114,14 @@ const JoinTeams = () => {
             )}
             <Typography>SMEs & TRADERS</Typography>
           </Box>
+
           <Box
             display="flex"
             flexDirection="row"
             alignItems="center"
             gap={1}
             component="button"
-            onClick={() => {
-              scrollCardToTop("construction");
-            }}
+            onClick={() => scrollCardToTop("construction")}
             sx={{ cursor: "pointer" }}
           >
             {activeTeam === "construction" && (
@@ -140,15 +140,14 @@ const JoinTeams = () => {
             )}
             <Typography>CONTRACTORS & PROJECT-BASED BUSINESSES</Typography>
           </Box>
+
           <Box
             display="flex"
             flexDirection="row"
             alignItems="center"
             gap={1}
             component="button"
-            onClick={() => {
-              scrollCardToTop("fuel");
-            }}
+            onClick={() => scrollCardToTop("fuel")}
             sx={{ cursor: "pointer" }}
           >
             {activeTeam === "fuel" && (
@@ -167,15 +166,14 @@ const JoinTeams = () => {
             )}
             <Typography>PETROL STATION MANAGEMENT</Typography>
           </Box>
+
           <Box
             display="flex"
             flexDirection="row"
             alignItems="center"
             gap={1}
             component="button"
-            onClick={() => {
-              scrollCardToTop("manufacturers");
-            }}
+            onClick={() => scrollCardToTop("manufacturers")}
             sx={{ cursor: "pointer" }}
           >
             {activeTeam === "manufacturers" && (
@@ -195,6 +193,7 @@ const JoinTeams = () => {
             <Typography>MANUFACTURING & PROCESSING</Typography>
           </Box>
         </Grid>
+
         <Grid size={{ xs: 12, md: 6 }} id="teamCardGrid">
           {Teams.map((team, index) => {
             return (
@@ -212,7 +211,7 @@ const JoinTeams = () => {
                     borderRadius: 3,
                     overflow: "hidden",
                   }}
-                ></Box>
+                />
                 <Box component="div" paddingX={{ xs: 4, md: 8 }} paddingY={4}>
                   <Typography
                     style={
@@ -231,8 +230,9 @@ const JoinTeams = () => {
                   >
                     {team.title}
                   </Typography>
+
                   <List>
-                    {team.points.map((point, index) => (
+                    {team.points.map((point) => (
                       <ListItem
                         key={point}
                         sx={{ borderTopColor: "lightgray", borderTopWidth: 2 }}
@@ -241,6 +241,7 @@ const JoinTeams = () => {
                       </ListItem>
                     ))}
                   </List>
+
                   <Stack direction="row" spacing={2} mt={2}>
                     <DemoButton />
                     <ContactUsButtom />
