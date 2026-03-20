@@ -1,0 +1,21 @@
+{
+  "name": "ProsERP",
+  "short_name": "ProsERP",
+  "description": "Robust ERP for accounting, project management, payroll, inventory, and requisitions.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#e0e0e0",
+  "theme_color": "#2113AD",
+  "icons": [
+    {
+      "src": "/assets/images/icons/logo512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/icons/logo192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
