@@ -51,6 +51,7 @@ const ValuePropositionSection = () => {
           <Grid size={12}>
             <Typography
               variant="body2"
+              className=" text-gray-800"
               style={
                 !belowLargeScreen
                   ? smallMutedText

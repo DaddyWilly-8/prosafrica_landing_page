@@ -20,7 +20,7 @@ const Logo = ({ mini = false, mode = "light", sx }: LogoProps) => {
         <Image
           src={
             mode === "light"
-              ? `/assets/images/logos/logo.png`
+              ? `/assets/images/logos/proserp-logo-darkgray.png`
               : `/assets/images/logos/proserp-white.png`
           }
           alt="Jumbo React"
