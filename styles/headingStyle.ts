@@ -49,11 +49,13 @@ export const heading2StyleBelowLargeScreen = {
 export const smallMutedText = {
   fontSize: 15,
   fontWeight: 100,
-  color: "gray",
+  // color: "gray",
+  color: "#1e2939",
 };
 
 export const smallMutedTextBelowLargeScreen = {
   fontSize: 13,
   fontWeight: 100,
-  color: "gray",
+  // color: "gray",
+  color: "#1e2939",
 };
