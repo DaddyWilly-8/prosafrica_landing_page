@@ -54,6 +54,7 @@ export const HowItWorks = () => {
         backgroundPositionY: "top",
         backgroundSize: "cover",
       }}
+      id="howItWorks"
     >
       <Box
         component="div"

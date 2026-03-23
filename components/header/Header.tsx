@@ -14,6 +14,8 @@ import Link from "next/link";
 import DemoButton from "../buttons/DemoButton";
 import { KeyboardArrowDown, Menu } from "@mui/icons-material";
 import { useSideBar } from "@/providers/sidebarProvider";
+import { headerMenuItems } from "@/lib/data/menuItems";
+import { useRouter } from "next/navigation";
 
 const Header = () => {
   const theme = useTheme();
@@ -21,13 +23,8 @@ const Header = () => {
     noSsr: true,
   });
   const { isOpen, toggleSideBar } = useSideBar();
-  const headerMenuItems = [
-    { label: "Product", href: "#", dropDown: true },
-    { label: "Pricing", href: "#", dropDown: false },
-    { label: "Company", href: "#", dropDown: false },
-    { label: "Case Studies", href: "#", dropDown: true },
-    { label: "Contact Us", href: "/contact", dropDown: false },
-  ];
+  const router = useRouter();
+
   return (
     <Grid
       container
@@ -64,7 +61,7 @@ const Header = () => {
             </Stack>
           </Grid>
           <Grid size={{ xs: 5, lg: 2 }}>
-            <DemoButton />
+            <DemoButton onClick={() => router.push("/contact/sales")} />
           </Grid>
         </>
       ) : (

@@ -1,5 +1,6 @@
 "use client";
 
+import { headerMenuItems } from "@/lib/data/menuItems";
 import { smallMutedText, subHeadingStyle } from "@/styles/headingStyle";
 import { Box, Divider, Grid, Stack, Typography } from "@mui/material";
 import Link from "next/link";
@@ -30,7 +31,7 @@ const Footer = () => {
               Real Operational Control Starts Here
             </Typography>
             <Link
-              href="tel:0655370832"
+              href="tel:0746917817"
               style={{ display: "flex", alignItems: "center", gap: 4 }}
             >
               <svg
@@ -50,7 +51,7 @@ const Footer = () => {
               </svg>
 
               <Typography style={{ ...smallMutedText, color: "white" }}>
-                065 537 0832
+                0746 917 817
               </Typography>
             </Link>
             <Link
@@ -118,21 +119,15 @@ const Footer = () => {
             }}
           >
             <Stack>
-              <Link href="#" style={{ ...subHeadingStyle, fontSize: 16 }}>
-                Case Studies
-              </Link>
-              <Link href="#" style={{ ...subHeadingStyle, fontSize: 16 }}>
-                About Us
-              </Link>
-              <Link href="#" style={{ ...subHeadingStyle, fontSize: 16 }}>
-                Blog
-              </Link>
-              <Link href="#" style={{ ...subHeadingStyle, fontSize: 16 }}>
-                Careers
-              </Link>
-              <Link href="#" style={{ ...subHeadingStyle, fontSize: 16 }}>
-                Contact
-              </Link>
+              {headerMenuItems.map((item, index) => (
+                <Link
+                  key={index}
+                  href={item.href}
+                  style={{ ...subHeadingStyle, fontSize: 16 }}
+                >
+                  {item.label}
+                </Link>
+              ))}
             </Stack>
           </Grid>
         </Grid>

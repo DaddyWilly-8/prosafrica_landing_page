@@ -64,7 +64,7 @@ const JoinTeams = () => {
               !belowLargeScreen ? heading2Style : heading2StyleBelowLargeScreen
             }
           >
-            Join teams Everything you need to run your business — in one ERP.
+            Industries that run their businesses - in one ERP
           </Typography>
           <Typography
             style={
@@ -82,7 +82,7 @@ const JoinTeams = () => {
         </Grid>
       </Grid>
 
-      <Grid container mt={{ xs: 10, md: 20 }}>
+      <Grid container mt={{ xs: 10, md: 20 }} id="industries">
         <Grid
           size={{ xs: 12, md: 6 }}
           height="100%"
@@ -241,11 +241,6 @@ const JoinTeams = () => {
                       </ListItem>
                     ))}
                   </List>
-
-                  <Stack direction="row" spacing={2} mt={2}>
-                    <DemoButton />
-                    <ContactUsButtom />
-                  </Stack>
                 </Box>
               </Paper>
             );

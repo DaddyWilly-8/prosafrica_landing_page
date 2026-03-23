@@ -81,20 +81,9 @@ const ValuePropositionSection = () => {
             flexDirection="column"
             alignItems="start"
             justifyContent="end"
-          >
-            <Typography variant="body2" style={smallMutedText}>
-              <span className="font-bold">Yohana Edward</span> <br /> CEO &
-              CO-FOUNDER
-            </Typography>
-            <Image
-              src="/assets/images/logos/logo.png"
-              alt="Jumbo React"
-              width={50}
-              height={50}
-              style={{ verticalAlign: "middle" }}
-            />
-          </Grid>
-          <Grid
+          ></Grid>
+
+          {/* <Grid
             container
             size={12}
             mt={4}
@@ -128,7 +117,7 @@ const ValuePropositionSection = () => {
                 </Grid>
               );
             })}
-          </Grid>
+          </Grid> */}
         </Grid>
       </Paper>
     </Box>

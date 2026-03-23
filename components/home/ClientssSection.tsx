@@ -66,12 +66,17 @@ const ClientssSection = () => {
             {clients.map((client, index) => (
               <Grid
                 key={index}
-                size={{ xs: 12, md: 6, lg: 2 }}
+                size={{ xs: 12, md: 6, lg: 3 }}
                 justifyContent="center"
                 alignItems="center"
                 display="flex"
               >
-                {client.image}
+                <img
+                  src={client.image}
+                  alt="client"
+                  width="150px"
+                  height="auto"
+                />
               </Grid>
             ))}
           </Grid>
