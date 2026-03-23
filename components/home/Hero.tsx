@@ -30,17 +30,22 @@ const Hero = () => {
     >
       <Box
         zIndex={2}
-        width={{ xs: "100%", md: "40%" }}
+        width={{ xs: "100%", md: "50%" }}
         mx="auto"
         sx={{
-          height: "100%",
+          height: "fit-content",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "end",
-          position: "relative",
+          position: "absolute",
+          bottom: 10,
+          mx: "auto",
+          left: { xs: 0, md: "25%" },
           textAlign: "center",
-          paddingBottom: 2,
+          paddingBottom: 4,
+          backgroundColor: "rgba(0, 0, 0, 0.7)",
+          borderRadius: 3,
         }}
       >
         <Typography
@@ -55,10 +60,6 @@ const Hero = () => {
         >
           Run your entire operations with clarity and confidence
         </Typography>
-        <Stack direction="row" spacing={2} mt={4}>
-          <DemoButton />
-          <ContactUsButtom />
-        </Stack>
       </Box>
     </Box>
   );

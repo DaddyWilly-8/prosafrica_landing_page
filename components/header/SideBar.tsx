@@ -1,5 +1,6 @@
 "use client";
 
+import { headerMenuItems } from "@/lib/data/menuItems";
 import { useSideBar } from "@/providers/sidebarProvider";
 import { KeyboardArrowDown } from "@mui/icons-material";
 import {
@@ -14,17 +15,12 @@ import {
 } from "@mui/material";
 import Link from "next/link";
 import { useState } from "react";
+import DemoButton from "../buttons/DemoButton";
+import { useRouter } from "next/navigation";
 
 const SideBar = () => {
   const { isOpen, toggleSideBar } = useSideBar();
-
-  const headerMenuItems = [
-    { label: "Product", href: "#", dropDown: true },
-    { label: "Pricing", href: "#", dropDown: false },
-    { label: "Company", href: "#", dropDown: false },
-    { label: "Case Studies", href: "#", dropDown: true },
-    { label: "Contact Us", href: "/contact", dropDown: false },
-  ];
+  const router = useRouter();
 
   const DrawerList = (
     <Box sx={{ width: 250 }} role="presentation" onClick={toggleSideBar}>
@@ -39,6 +35,12 @@ const SideBar = () => {
             </Link>
           </ListItem>
         ))}
+        <ListItem sx={{ paddingY: 2, mt: 4 }}>
+          <DemoButton
+            onClick={() => router.push("/contact/sales")}
+            sx={{ width: "100%" }}
+          />
+        </ListItem>
       </List>
     </Box>
   );

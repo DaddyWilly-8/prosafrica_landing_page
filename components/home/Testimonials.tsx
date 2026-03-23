@@ -59,8 +59,17 @@ const Testimonials = () => {
             spacing={2}
           >
             {clients.map((client, index) => {
-              if (index > 2) return null;
-              return <Typography key={index}>{client.image}</Typography>;
+              if (index > 0) return null;
+              return (
+                <Typography key={index}>
+                  <img
+                    src={client.image}
+                    alt="client"
+                    width="80px"
+                    height="auto"
+                  />
+                </Typography>
+              );
             })}
           </Stack>
         )}
@@ -112,7 +121,7 @@ const Testimonials = () => {
             </Typography>
           </Box>
         </Stack>
-        <Stack direction={{ xs: "column", md: "row" }} spacing={4} mt={4}>
+        {/* <Stack direction={{ xs: "column", md: "row" }} spacing={4} mt={4}>
           <Paper sx={{ borderWidth: 1, borderColor: "gray", padding: 4 }}>
             <Typography
               style={{ ...subHeadingStyle, color: "black", fontWeight: "bold" }}
@@ -129,7 +138,7 @@ const Testimonials = () => {
             </Typography>
             <Typography>Faster spend approvals</Typography>
           </Paper>
-        </Stack>
+        </Stack> */}
       </Paper>
     </Box>
   );
