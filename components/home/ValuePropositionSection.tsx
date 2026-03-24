@@ -70,9 +70,8 @@ const ValuePropositionSection = () => {
                   : heading2StyleBelowLargeScreen
               }
             >
-              “Most businesses don’t have a data problem — they have a systems
-              problem. ProsERP brings finance and operations into one clear
-              source of truth.”
+              “Don’t just record transactions — understand your business.
+              Visualize revenue, expenses, and profit trends instantly”
             </Typography>
           </Grid>
           <Grid
@@ -81,7 +80,28 @@ const ValuePropositionSection = () => {
             flexDirection="column"
             alignItems="start"
             justifyContent="end"
-          ></Grid>
+          >
+            <Paper
+              elevation={12}
+              sx={{
+                padding: 0,
+                borderRadius: 3,
+                backgroundColor: "white",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "start",
+                overflow: "hidden",
+                objectFit: "cover",
+              }}
+            >
+              <img
+                src="/assets/images/Transparend-PL-Trend.png"
+                width="100%"
+                height="auto"
+                alt=""
+              />
+            </Paper>
+          </Grid>
 
           {/* <Grid
             container
