@@ -91,14 +91,19 @@ const ValuePropositionSection = () => {
                 flexDirection: "column",
                 alignItems: "start",
                 overflow: "hidden",
-                objectFit: "cover",
               }}
             >
-              <img
+              <Image
                 src="/assets/images/Transparend-PL-Trend.png"
-                width="100%"
-                height="auto"
-                alt=""
+                alt="Visualize revenue, expenses, and profit trends instantly"
+                priority
+                width={500}
+                height={500}
+                style={{
+                  objectFit: "cover",
+                  width: "100%",
+                  height: "auto",
+                }}
               />
             </Paper>
           </Grid>

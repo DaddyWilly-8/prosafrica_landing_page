@@ -15,6 +15,7 @@ import {
   useTheme,
 } from "@mui/material";
 import DemoButton from "../buttons/DemoButton";
+import Image from "next/image";
 
 const WhyProsErp = () => {
   const theme = useTheme();
@@ -33,9 +34,14 @@ const WhyProsErp = () => {
               position: "relative",
             }}
           >
-            <img
+            <Image
               src="/assets/images/african-american-business-woman-working-computer-bar.jpg"
+              alt="Why businesses choose ProsERP"
+              width={500}
+              height={500}
               style={{
+                width: "100%",
+                height: "100%",
                 opacity: 0.7,
                 position: "absolute",
                 objectFit: "cover",

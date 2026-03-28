@@ -9,6 +9,7 @@ import {
   subHeadingStyle,
   subHeadingStyleBelowLargeScreen,
 } from "@/styles/headingStyle";
+import Image from "next/image";
 
 const Hero = () => {
   const theme = useTheme();
@@ -20,14 +21,17 @@ const Hero = () => {
         overflow: "hidden",
         width: "100%",
         height: "90vh",
-        backgroundColor: "black",
+        backgroundColor: "gray",
         position: "relative",
-        backgroundImage:
-          "url('/assets/images/three-happy-multiracial-colleagues-looking-down-smiling-while-using-digital-tablet-office.jpg')",
-        backgroundSize: "cover",
-        backgroundPositionY: "top",
       }}
     >
+      <Image
+        src="/assets/images/three-happy-multiracial-colleagues-looking-down-smiling-while-using-digital-tablet-office.jpg"
+        alt="hero image"
+        fill
+        priority
+        style={{ objectFit: "cover" }}
+      />
       <Box
         zIndex={2}
         width={{ xs: "100%", md: "50%" }}

@@ -18,6 +18,7 @@ import {
 } from "@mui/material";
 import ViewSolnButton from "../buttons/ViewSolnButton";
 import DemoButton from "../buttons/DemoButton";
+import Image from "next/image";
 
 const ManagementTools = () => {
   const theme = useTheme();
@@ -53,8 +54,11 @@ const ManagementTools = () => {
                 display: "flex",
               }}
             >
-              <img
+              <Image
                 src={tool.image}
+                alt={tool.title}
+                width={500}
+                height={500}
                 style={{
                   opacity: 0.7,
                   position: "relative",

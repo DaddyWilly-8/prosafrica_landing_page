@@ -16,6 +16,7 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
+import Image from "next/image";
 import React from "react";
 
 export const HowItWorks = () => {
@@ -48,14 +49,21 @@ export const HowItWorks = () => {
         alignItems: "center",
         justifyContent: "end",
         padding: 4,
-        backgroundColor: "black",
-        backgroundImage:
-          "url('/assets/images/black-man-engineer-using-tablet-computer-operating-cnc-machine-cutting-wood-furniture-factory.jpg')",
-        backgroundPositionY: "top",
-        backgroundSize: "cover",
+        backgroundColor: "gray",
+        position: "relative",
+        // backgroundImage:
+        //   "url('/assets/images/black-man-engineer-using-tablet-computer-operating-cnc-machine-cutting-wood-furniture-factory.jpg')",
+        // backgroundPositionY: "top",
+        // backgroundSize: "cover",
       }}
       id="howItWorks"
     >
+      <Image
+        src="/assets/images/black-man-engineer-using-tablet-computer-operating-cnc-machine-cutting-wood-furniture-factory.jpg"
+        alt="hero image"
+        fill
+        style={{ objectFit: "cover" }}
+      />
       <Box
         component="div"
         sx={{
@@ -63,8 +71,9 @@ export const HowItWorks = () => {
           padding: 4,
           px: 2,
           mt: 4,
-          width: { xs: "100%", md: "25%" },
+          width: { xs: 250, md: 300 },
           borderRadius: 3,
+          position: "relative",
         }}
       >
         <Typography

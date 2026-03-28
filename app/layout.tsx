@@ -7,6 +7,7 @@ import Footer from "@/components/footer/Footer";
 import SideBar from "@/components/header/SideBar";
 import { SidebarProvider } from "@/providers/sidebarProvider";
 import { VercelSpeedInsights } from "@/components/VercelSpeedInsights";
+import dynamic from "next/dynamic";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -46,10 +47,6 @@ export const metadata: Metadata = {
   generator: "Next.js",
   manifest: "/manifest.json",
   keywords: ["nextjs", "next14", "pwa", "next-pwa"],
-  // icons: [
-  //   { rel: 'apple-touch-icon', url: '/assets/images/icons/logo512.png' },
-  //   { rel: 'icon', url: '/assets/images/icons/logo512.png' },
-  // ],
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
@@ -82,6 +79,8 @@ export const metadata: Metadata = {
   },
 };
 
+const SideBarComponent = dynamic(() => import("@/components/header/SideBar"));
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -93,7 +92,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
       >
         <SidebarProvider>
-          <SideBar />
+          <SideBarComponent />
           <Header />
           <main className="px-2 md:px-8 pb-10 mt-20 md:mt-28">{children}</main>
           <Footer />

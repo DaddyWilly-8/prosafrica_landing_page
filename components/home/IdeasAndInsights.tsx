@@ -20,6 +20,7 @@ import {
 import DemoButton from "../buttons/DemoButton";
 import ContactUsButtom from "../buttons/ContactUsButtom";
 import { IdeasInsights } from "@/lib/data/home/ideasAndInsights";
+import Image from "next/image";
 
 const IdeasAndInsights = () => {
   const theme = useTheme();
@@ -65,8 +66,11 @@ const IdeasAndInsights = () => {
                   alignItems: "center",
                 }}
               >
-                <img
+                <Image
                   src={idea.image}
+                  alt={idea.title}
+                  width={500}
+                  height={500}
                   style={{
                     objectFit: "cover",
                     width: "100%",
@@ -78,8 +82,8 @@ const IdeasAndInsights = () => {
               </Box>
               <Box component="div" paddingX={2} paddingY={4}>
                 <Stack
-                  direction="row"
-                  spacing={8}
+                  direction={{ xs: "row", md: "column", lg: "row" }}
+                  spacing={{ xs: 4, md: 2, lg: 8 }}
                   width="100%"
                   display="flex"
                   alignItems="center"

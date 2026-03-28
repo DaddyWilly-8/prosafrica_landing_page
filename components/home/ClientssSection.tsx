@@ -15,6 +15,7 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
+import Image from "next/image";
 
 const ClientssSection = () => {
   const theme = useTheme();
@@ -70,12 +71,13 @@ const ClientssSection = () => {
                 justifyContent="center"
                 alignItems="center"
                 display="flex"
+                position="relative"
               >
-                <img
+                <Image
                   src={client.image}
                   alt="client"
-                  width="150px"
-                  height="auto"
+                  width={150}
+                  height={95}
                 />
               </Grid>
             ))}
