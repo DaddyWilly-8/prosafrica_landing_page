@@ -2,7 +2,7 @@ const express = require('express');
 const route = express.Router();
 
 route.get('/', (req, res, next) => {
-    res.render('index', {});
+    res.render('index-4', {});
 });
 
 route.get('/index-2', (req, res, next) => {
