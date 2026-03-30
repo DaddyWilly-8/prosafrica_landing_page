@@ -23,9 +23,10 @@
     "sass": "1.77.6"
   },
   "scripts": {
-    "gulp": "gulp",
-    "build": "gulp build",
+    "start": "node app.js",
+    "build": "echo 'no build step'",
     "dev": "npm-run-all gulp preview",
+    "gulp": "gulp",
     "preview": "nodemon app.js",
     "rtl": "gulp rtl",
     "rtl-build": "gulp rtlBuild"
