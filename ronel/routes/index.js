@@ -45,5 +45,11 @@ route.get('/reset', (req, res, next) => {
     res.render('reset', {});
 });
 
+// contact routes
+
+route.get('/get-started', (req, res, next) => {
+    res.render('pages/contact/get-started', {});
+});
+
 
 module.exports = route;
