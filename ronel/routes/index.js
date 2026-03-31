@@ -1,8 +1,25 @@
 const express = require('express');
 const route = express.Router();
 
+
+// Redirect Home to /index-4
 route.get('/', (req, res, next) => {
-    res.render('index', {});
+    res.redirect('/index-4');
+});
+
+// About page
+route.get('/about', (req, res, next) => {
+    res.render('about', {});
+});
+
+// Industries page
+route.get('/industries', (req, res, next) => {
+    res.render('industries', {});
+});
+
+// Testimonial page
+route.get('/testimonial', (req, res, next) => {
+    res.render('testimonial', {});
 });
 
 route.get('/index-2', (req, res, next) => {
