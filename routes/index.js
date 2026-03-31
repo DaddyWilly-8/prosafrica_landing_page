@@ -2,9 +2,9 @@ const express = require('express');
 const route = express.Router();
 
 
-// Redirect Home to /index-4
+// Home page renders index.ejs
 route.get('/', (req, res, next) => {
-    res.redirect('/index-4');
+    res.render('index', {});
 });
 
 // About page
