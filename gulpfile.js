@@ -1,9 +1,7 @@
-const { src, dest, series } = require('gulp');
+const gulp = require('gulp');
 
-function defaultTask(cb) {
-  // place code for your default task here
-  console.log('Gulp is running in ronel!');
-  cb();
-}
-
-exports.default = series(defaultTask);
+gulp.task('default', function(done) {
+  // Basic default task
+  console.log('Gulp is running.');
+  done();
+});

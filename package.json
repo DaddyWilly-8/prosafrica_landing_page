@@ -15,7 +15,6 @@
   "devDependencies": {
     "autoprefixer": "^10.4.0",
     "gulp": "^5.0.1",
-    "gulp-cli": "^3.1.0",
     "gulp-concat": "^2.6.1",
     "node-sass-tilde-importer": "^1.0.2",
     "pixrem": "^5.0.0",
@@ -23,10 +22,9 @@
     "sass": "1.77.6"
   },
   "scripts": {
-    "start": "node app.js",
-    "build": "echo 'no build step'",
-    "dev": "npm-run-all gulp preview",
     "gulp": "gulp",
+    "build": "gulp build",
+    "dev": "npm-run-all gulp preview",
     "preview": "nodemon app.js",
     "rtl": "gulp rtl",
     "rtl-build": "gulp rtlBuild"
