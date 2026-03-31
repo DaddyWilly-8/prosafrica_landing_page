@@ -6,8 +6,8 @@
     <meta charset="utf-8" />
     <meta content="IE=edge" http-equiv="X-UA-Compatible" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Renol</title>
-    <link href="/images/favicon.ico" rel="icon" type="images/x-icon" />
+    <title>ProsERP</title>
+    <link href="/images/logo/icon.png" rel="icon" type="images/x-icon" />
     <!-- remix icon  -->
     <link href="/css/remixicon.css" rel="stylesheet" />
     <!-- swiper -->
@@ -15,6 +15,7 @@
     <!-- bootstrap  -->
     <link href="/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/css/style.min.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet" />
     </link>
 </head>
 
@@ -34,11 +35,15 @@
     </div>
     <!-- nav-bar start  -->
     <header>
-        <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-light" id="navbar">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-custom navbar-light sticky sticky-light" id="navbar">
             <div class="container">
                 <div class="navbar-brand logo">
-                    <a class="navbar-caption fs-4 text-light ls-1 fw-bold" href="/#!"><i
-                            class="ri-registered-fill text-success fs-3 me-1"></i>RENOL
+                    <a class="navbar-caption fs-4 text-primary ls-1 fw-bold" href="/">
+                        <!-- <i class="ri-registered-fill text-success fs-3 me-1"></i> RENOL -->
+                        <img src="/images/logo/proserp-blue.png" id="blue_logo" alt="proserp logo" width="100px"
+                            height="auto">
+                        <img src="/images/logo/proserp-white.png" id="white_logo" class="d-none" alt="proserp logo"
+                            width="100px" height="auto">
                     </a>
                 </div>
                 <button aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"
@@ -54,10 +59,7 @@
                             <a class="nav-link" href="/#about">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/#services">Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/#price">Price</a>
+                            <a class="nav-link" href="/#industries">Industries</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/#testimonial">Testimonial</a>
@@ -65,7 +67,7 @@
                     </ul>
                     <ul class="navbar-nav nav-btn">
                         <li class="nav-item">
-                            <a class="nav-link" href="/#contacts">Contact
+                            <a class="nav-link" href="#contacts">Contact
                                 Us</a>
                         </li>
                     </ul>
@@ -74,33 +76,48 @@
         </nav>
     </header>
     <!-- nav-bar end  -->
-    <!-- hero section start  -->
-    <section class="hero-section bg-primary z-1" id="home">
-        <div class="star-container position-absolute z-n1">
-            <canvas id="star-particle"></canvas>
-        </div>
+    <section class="hero-section bg-img-4 bg-home-4 pb-0" id="home">
         <div class="container">
-            <div class="row align-items-center justify-content-center z-1">
-                <div class="col-lg-8 align-self-start">
-                    <div class="text-center">
-                        <h1 class="display-3 text-light fw-bold lh-base">
-                            Business Skyrocketing With <span class="text-success"> Digital Marketing
-                            </span></h1>
-                        <p class="text-white-50 mt-3">Feugiat primis ligula
-                            risus auctor augue egestas and mauris viverra tortor
-                            undo iaculis <br /> feugiat magna mauris integer odio
-                            an ipsum in placerat ligula risus augue</p>
-                        <div class="main-btn mt-5">
-                            <a class="btn btn-success btn-lg text-dark fw-semibold me-2" href="/#!">Registration
-                                <i class="ri-arrow-right-line ms-2"></i></a>
-                            <a class="ms-4 text-white" href="/#!">See How It Work
-                                !</a>
+            <div class="row align-items-center justify-content-between">
+                <div class="col-lg-6">
+                    <!-- <h6 class="text-primary">We Are The Best *</h6> -->
+                    <h1 class="display-5 text-primary lh-base fw-bold">
+                        <span class="text-success">ERP </span> Product
+                    </h1>
+                    <p>
+                        One ERP to run real operations end to end. Run your entire operations with clarity and
+                        confidence
+                    </p>
+                    <ul>
+                        <li>
+                            <i class="ri-checkbox-circle-fill text-success me-2 fs-3 align-middle"></i>
+                            Get visibility to your team
+                        </li>
+                        <li>
+                            <i class="ri-checkbox-circle-fill text-success me-2 fs-3 align-middle"></i>
+                            Design based on your operations
+                        </li>
+                    </ul>
+                    <div class="main-btn">
+                        <a class="btn btn-primary btn-lg text-light" href="/get-started">Get Started</a>
+                        <a class="btn" data-bs-target="#exampleModal" data-bs-toggle="modal" href="/#!"><i
+                                class="ri-play-fill fs-4 me-2 align-middle"></i>See
+                            How It Work</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="main-man">
+                        <img alt="" class="img-fluid man-img" src="/images/happy-black-guy.png" />
+                        <div class="main-man-content d-flex p-3 shadow rounded-3">
+                            <img alt="" class="img-fluid me-2" src="/images/balancesheet.jpeg" />
+                        </div>
+                        <div class="main-man-content-2 shadow rounded-3">
+                            <img alt="" class="img-fluid me-3" src="/images/income-statement.jpeg" />
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <img alt="" class="img-fluid shape w-100 z-n1 opacity-25" src="/images/city-2.png" />
     </section>
     <section class="section about-section bg-light" id="about">
         <div class="container">
@@ -114,19 +131,24 @@
                     </div>
                     <div class="section-title-border mt-3 m-0"></div>
                     <div class="about-title mt-4">
-                        <h2 class="fw-semibold text-primary lh-base">Best For
-                            Organize And Customize Easily</h2>
-                        <p>There are many variations of passages of Lorem Ipsum
-                            available, but the majority have suffered alteration
-                            in some form, by injected humour, or randomised
-                            words which don't look even slightly believable. If
-                            you are going to use a passage of Lorem Ipsum, you
-                            need to be sure there isn't anything embarrassing
-                            hidden in the middle of text.</p>
-                        <div class="about-btn mt-4">
+                        <!-- <h2 class="fw-semibold text-primary lh-base">Best For
+                            Organize And Customize Easily</h2> -->
+                        <p>
+                            PROS ERP is built for businesses that demand control, visibility, and efficiency.
+                            At the core of our platform is a powerful financial system that connects every operation —
+                            from sales and inventory to projects, production, and reporting.
+                            We serve a wide range of industries including retail, distribution, construction, fuel
+                            operations, and manufacturing — providing one flexible system that adapts to how businesses
+                            actually work.
+                            Our goal is simple: to eliminate complexity and give businesses real-time insight into
+                            everything that matters.
+                            With PROS ERP, you don’t just manage operations.
+                            You understand them.
+                        </p>
+                        <!-- <div class="about-btn mt-4">
                             <a class="btn btn-primary fw-semibold" href="/#!">Show More <i
                                     class="ri-arrow-right-line"></i></a>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -138,72 +160,121 @@
                 <div class="row align-items-center justify-content-evenly">
                     <div class="col-lg-5">
                         <div class="title-sm">
-                            <span>Our Services</span>
+                            <span>Our Industries</span>
                         </div>
                         <div class="section-title-border mt-3 m-0"></div>
                         <div class="service-title mt-4">
-                            <h2 class="fw-semibold text-primary lh-base">We
-                                Providing Best Advance <br /> Services</h2>
+                            <h2 class="fw-semibold text-primary lh-base">
+                                An ERP that actually works
                         </div>
                     </div>
                     <div class="col-lg-5">
-                        <p class="mt-5 text-primary">All the Lorem Ipsum
-                            generators on the
-                            Internet tend to repeat predefined as necessary,
-                            making this the first true generator on the
-                            Internet.</p>
-                        <a class="text-success" href="/#!">Learn More <i class="ri-arrow-right-line"></i></a>
+                        <p class="mt-5 text-primary">
+                            Most of business don’t have a data problem they have a system problem. Pros ERP brings
+                            finance and operations into one clear source of truth
+                        </p>
+                        <!-- <a class="text-success" href="/#!">Learn More <i class="ri-arrow-right-line"></i></a> -->
                     </div>
                 </div>
             </div>
-            <div class="row align-items-center justify-content-evenly mt-4 g-4">
-                <div class="col-lg-5">
+            <div class="row align-items-center mt-4 g-4">
+                <div class="col-lg-6">
                     <div class="services-content p-3 shadow-sm">
                         <span class="text-success">01</span>
                         <div class="title-sm mt-2">
-                            <span class="text-primary">Security Advisory</span>
+                            <span class="text-primary">Trading / Retail / Distribution</span>
                         </div>
-                        <p class="mt-2">combined with a handful of model
-                            sentence structures, to generate Lorem Ipsum which
-                            looks reasonable. The generated Lorem Ipsum is
-                            therefore always free from repetition</p>
+                        <p class="mt-2">
+                            Run your trading, retail, or distribution business effortlessly with centralized control
+                            over sales, purchases, inventory, and customers, while gaining real time financial insights,
+                            improving accuracy, and scaling operations smoothly across multiple branches without
+                            complexity added.
+                        </p>
                     </div>
                 </div>
-                <div class="col-lg-5">
+                <div class="col-lg-6">
                     <div class="services-content p-3 shadow-sm">
                         <span class="text-success">02</span>
                         <div class="title-sm mt-2">
-                            <span class="text-primary">Technical
-                                Assurance</span>
+                            <span class="text-primary">
+                                Construction
+                            </span>
                         </div>
-                        <p class="mt-2">combined with a handful of model
-                            sentence structures, to generate Lorem Ipsum which
-                            looks reasonable. The generated Lorem Ipsum is
-                            therefore always free from repetition</p>
+                        <p class="mt-2">
+                            Manage construction and engineering projects with complete visibility by planning
+                            milestones, tracking progress, controlling costs, managing subcontractors, and ensuring
+                            materials are used efficiently, helping you deliver projects on time, within budget, and
+                            with confidence consistently.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="services-content p-3 shadow-sm">
+                        <span class="text-success">03</span>
+                        <div class="title-sm mt-2">
+                            <span class="text-primary">
+                                Manufacturing
+                            </span>
+                        </div>
+                        <p class="mt-2">
+                            Streamline manufacturing operations by combining raw materials, production processes, and
+                            costing into one system, enabling accurate unit cost calculations, time work in progress
+                            tracking, efficient inventory conversion, and decision making to maximize productivity and
+                            profitability.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="services-content p-3 shadow-sm">
+                        <span class="text-success">04</span>
+                        <div class="title-sm mt-2">
+                            <span class="text-primary">
+                                Fuel Stations
+                            </span>
+                        </div>
+                        <p class="mt-2">
+                            Operate fuel stations by tracking sales per shift, monitoring tank and nozzle stock levels,
+                            managing deliveries, detecting variances, and integrating operations with accounting
+                            systems, giving you reporting, tighter control, and improved profitability across all
+                            locations
+                        </p>
                     </div>
                 </div>
             </div>
+
             <div class="row align-items-center justify-content-evenly mt-5 g-4">
                 <div class="col-lg-3">
                     <div class="services-content-1 p-2 rounded-pill">
-                        <i class="ri-heart-2-line text-primary bg-success-subtle"></i>
-                        <span class="ms-4 fs-2xl">50+ Unique
-                            Design</span>
+                        <i class="ri-file-list-line text-primary bg-success-subtle"></i>
+                        <span class="ms-4 fs-2xl">Projects</span>
                     </div>
                 </div>
                 <div class="col-lg-3">
                     <div class="services-content-1 p-2 rounded-pill">
-                        <i class="ri-pages-fill text-primary bg-success-subtle"></i>
-                        <span class="ms-4 fs-2xl">Web Development</span>
+                        <i class="ri-wallet-line text-primary bg-success-subtle"></i>
+                        <span class="ms-4 fs-2xl">Accounting</span>
                     </div>
                 </div>
                 <div class="col-lg-3">
                     <div class="services-content-1 p-2 rounded-pill">
-                        <i class="ri-database-fill text-primary bg-success-subtle"></i>
-                        <span class="ms-4 fs-2xl">Data Recovery</span>
+                        <i class="ri-database-line text-primary bg-success-subtle"></i>
+                        <span class="ms-4 fs-2xl">Procurement</span>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="services-content-1 p-2 rounded-pill">
+                        <i class="ri-archive-line text-primary bg-success-subtle"></i>
+                        <span class="ms-4 fs-2xl">Inventory</span>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="services-content-1 p-2 rounded-pill">
+                        <i class="ri-file-chart-line text-primary bg-success-subtle"></i>
+                        <span class="ms-4 fs-2xl">Reports</span>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
     <section class="section why-choose-section bg-light">
@@ -211,44 +282,58 @@
             <div class="row align-items-center justify-content-between">
                 <div class="col-lg-5">
                     <div class="title-sm">
-                        <span>Why Choose Us</span>
+                        <span>Why Choose PROS ERP</span>
                     </div>
                     <div class="section-title-border mt-3 m-0"></div>
                     <div class="why-choose-title mt-4">
-                        <h2 class="fw-semibold text-primary lh-base">Trusted
-                            World Widely</h2>
-                        <p>It was popularised in the 1960s with the release of
-                            Letraset sheets containing Lorem Ipsum passages, and
-                            more recently with desktop</p>
+                        <h2 class="fw-semibold text-primary lh-base">
+                            Built for Real Business Operations
+                        </h2>
+                        <p>Designed to handle trading, manufacturing, construction, and fuel operations—PROS ERP adapts
+                            to how your business actually runs.</p>
                     </div>
                     <div class="row mt-4 g-4">
                         <div class="col-lg-6 col-6">
                             <div class="d-flex align-items-center">
                                 <i class="ri-checkbox-blank-circle-fill text-success fs-4"></i>
-                                <h6 class="ms-3 m-0">1000+ Trusted Clients</h6>
+                                <h6 class="ms-3 m-0">Simple Yet Powerful</h6>
                             </div>
                         </div>
                         <div class="col-lg-6 col-6">
                             <div class="d-flex align-items-center">
                                 <i class="ri-checkbox-blank-circle-fill text-success fs-4"></i>
-                                <h6 class="ms-3 m-0">30+ Dedicated Teams</h6>
+                                <h6 class="ms-3 m-0">All-in-One Control</h6>
                             </div>
                         </div>
                         <div class="col-lg-6 col-6">
                             <div class="d-flex align-items-center">
                                 <i class="ri-checkbox-blank-circle-fill text-success fs-4"></i>
-                                <h6 class="ms-3 m-0">Outctome Focused</h6>
+                                <h6 class="ms-3 m-0">Real-Time Insights</h6>
                             </div>
                         </div>
                         <div class="col-lg-6 col-6">
                             <div class="d-flex align-items-center">
                                 <i class="ri-checkbox-blank-circle-fill text-success fs-4"></i>
-                                <h6 class="ms-3 m-0">Web Application Expert</h6>
+                                <h6 class="ms-3 m-0">Scalable & Flexible</h6>
                             </div>
                         </div>
-                        <div class="main-btn mt-5 d-flex">
-                            <a class="btn btn-primary fw-semibold" href="/#!">Sign Up
-                                !</a>
+                        <div class="col-lg-6 col-6">
+                            <div class="d-flex align-items-center">
+                                <i class="ri-checkbox-blank-circle-fill text-success fs-4"></i>
+                                <h6 class="ms-3 m-0">Mobile & Anywhere Access</h6>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-6">
+                            <div class="d-flex align-items-center">
+                                <i class="ri-checkbox-blank-circle-fill text-success fs-4"></i>
+                                <h6 class="ms-3 m-0">Local Expertise, Global Standards</h6>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-6">
+                            <div class="d-flex align-items-center">
+                                <i class="ri-checkbox-blank-circle-fill text-success fs-4"></i>
+                                <h6 class="ms-3 m-0">Reliable Support</h6>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -262,9 +347,7 @@
         <div class="container">
             <div class="row align-items-center justify-content-between">
                 <div class="col-lg-6">
-                    <div class="man-img">
-                        <img alt="" class="img-fluid shadow-sm rounded-2" src="/images/group-working.jpg" />
-                    </div>
+                    <img alt="" class="img-fluid shadow-sm rounded-2" src="/images/group-working.jpg" />
                 </div>
                 <div class="col-lg-5">
                     <div class="title-sm">
@@ -272,55 +355,81 @@
                     </div>
                     <div class="section-title-border mt-3 m-0"></div>
                     <div class="why-choose-title mt-4">
-                        <h2 class="fw-semibold text-primary lh-base"> We Are
-                            Truly Able To Help Our Clients Live Happier</h2>
-                        <p>Richard McClintock, a Latin professor at
+                        <!-- <h2 class="fw-semibold text-primary lh-base"> We Are
+                            Truly Able To Help Our Clients Work Effectively</h2> -->
+                        <!-- <p>Richard McClintock, a Latin professor at
                             Hampden-Sydney College in Virginia, looked up one of
-                            the more obscure Latin words, consectetur. </p>
+                            the more obscure Latin words, consectetur. </p> -->
                     </div>
-                    <div class="row align-items-center justify-content-center">
+                    <div class="row align-items-start justify-content-center">
                         <div class="col-lg-6">
                             <div class="icon-text mt-4">
                                 <div class="icon">
-                                    <i class="ri-donut-chart-fill"></i>
+                                    <!-- <i class="ri-donut-chart-fill"></i> -->
+                                    <h4>01</h4>
                                 </div>
-                                <h6 class="fw-semibold mt-3">Our Research
-                                </h6>
-                                <p>A research project is an academic,
-                                    scientific, or professional</p>
+                                <h6 class="fw-semibold mt-3">Setup & Customize</h6>
+                                <p>We configure PROS ERP to match your business structure, processes, and reporting
+                                    needs—ensuring everything fits perfectly from day one.</p>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="icon-text mt-4">
                                 <div class="icon">
-                                    <i class="ri-database-line"></i>
+                                    <!-- <i class="ri-database-line"></i> -->
+                                    <h4>02</h4>
                                 </div>
-                                <h6 class="fw-semibold mt-3">Data Collection
+                                <h6 class="fw-semibold mt-3">Input & Integrate
                                 </h6>
-                                <p>Data collection methods include surveys,
-                                    interviews, observations</p>
+                                <p>DEasily capture your daily operations—from sales and purchases to production and
+                                    projects—while integrating all departments into one system.</p>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="icon-text mt-4">
                                 <div class="icon">
-                                    <i class="ri-focus-2-fill"></i>
+                                    <!-- <i class="ri-focus-2-fill"></i> -->
+                                    <h4>03</h4>
                                 </div>
-                                <h6 class="fw-semibold mt-3">Targeting
+                                <h6 class="fw-semibold mt-3">Automate Processes
                                 </h6>
-                                <p>Project targets help structure projects into
-                                    smaller pieces of work</p>
+                                <p>Eliminate manual work with automated workflows for inventory, accounting, costing,
+                                    and reporting.</p>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="icon-text mt-4">
                                 <div class="icon">
-                                    <i class="ri-team-fill"></i>
+                                    <!-- <i class="ri-team-fill"></i> -->
+                                    <h4>04</h4>
                                 </div>
-                                <h6 class="fw-semibold mt-3">Solve Problem
+                                <h6 class="fw-semibold mt-3">Monitor in Real Time
                                 </h6>
-                                <p>Problem-solving is a process to identify
-                                    roadblocks or during a project </p>
+                                <p>Track performance, stock levels, project progress, and financials instantly from a
+                                    single dashboard. </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="icon-text mt-4">
+                                <div class="icon">
+                                    <!-- <i class="ri-team-fill"></i> -->
+                                    <h4>05</h4>
+                                </div>
+                                <h6 class="fw-semibold mt-3">Analyze & Decide
+                                </h6>
+                                <p>Use accurate reports and insights to make smarter, faster business decisions.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="icon-text mt-4">
+                                <div class="icon">
+                                    <!-- <i class="ri-team-fill"></i> -->
+                                    <h4>06</h4>
+                                </div>
+                                <h6 class="fw-semibold mt-3">Scale & Optimize
+                                </h6>
+                                <p>As your business grows, PROS ERP evolves with you—supporting expansion, multiple
+                                    branches, and increased complexity.</p>
                             </div>
                         </div>
                     </div>
@@ -328,7 +437,9 @@
             </div>
         </div>
     </section>
-    <section class="section price-section position-relative z-1" id="price">
+
+    <!-- PRICING -->
+    <!-- <section class="section price-section position-relative z-1" id="price">
         <div class="container">
             <div class="row align-items-center justify-content-center text-center">
                 <div class="col-lg-7">
@@ -380,7 +491,8 @@
                         </div>
                         <div class="card-footer border-0 bg-white">
                             <div class="price-btn text-center">
-                                <a class="btn btn-primary w-100 fw-semibold" href="/#!">Choose This
+                                <a class="btn btn-primary w-100 fw-semibold" href="/#!">Choose
+                                    This
                                     Plan</a>
                             </div>
                         </div>
@@ -423,7 +535,8 @@
                         </div>
                         <div class="card-footer border-0 bg-white">
                             <div class="price-btn text-center">
-                                <a class="btn btn-success w-100 fw-semibold" href="/#!">Choose This
+                                <a class="btn btn-success w-100 fw-semibold" href="/#!">Choose
+                                    This
                                     Plan</a>
                             </div>
                         </div>
@@ -466,7 +579,8 @@
                         </div>
                         <div class="card-footer border-0 bg-white">
                             <div class="price-btn text-center">
-                                <a class="btn btn-primary w-100 fw-semibold" href="/#!">Choose This
+                                <a class="btn btn-primary w-100 fw-semibold" href="/#!">Choose
+                                    This
                                     Plan</a>
                             </div>
                         </div>
@@ -475,7 +589,8 @@
             </div>
         </div>
         <img alt="" class="img-fluid w-100 shape z-n1" src="/images/Wave.svg" />
-    </section>
+    </section> -->
+
     <section class="section faq-section">
         <div class="container">
             <div class="row align-items-center justify-content-center text-center">
@@ -512,7 +627,8 @@
                             <div aria-labelledby="headingOne" class="accordion-collapse collapse shadow-sm"
                                 data-bs-parent="#accordionExample1" id="collapseOne">
                                 <div class="accordion-body">
-                                    <span class="text-muted">Contrary to this, individuals above
+                                    <span class="text-muted">Contrary to this,
+                                        individuals above
                                         this tax bracket of 30% can benefit from
                                         low basic pay. This
                                         is because the superannuation or
@@ -534,7 +650,8 @@
                             <div aria-labelledby="headingTwo" class="accordion-collapse collapse show shadow-sm"
                                 data-bs-parent="#accordionExample1" id="collapseTwo">
                                 <div class="accordion-body">
-                                    <span class="text-muted">Try using coloured paper so that all
+                                    <span class="text-muted">Try using coloured
+                                        paper so that all
                                         related notes are made on sheets of the
                                         same colour. Some
                                         notebooks have sections in different
@@ -558,7 +675,8 @@
                             <div aria-labelledby="headingThree" class="accordion-collapse collapse shadow-sm"
                                 data-bs-parent="#accordionExample1" id="collapseThree">
                                 <div class="accordion-body">
-                                    <span class="text-muted">Typically, an average project will
+                                    <span class="text-muted">Typically, an
+                                        average project will
                                         take in the region of three four months.
                                         Some of our projects
                                         are small, fully specified and are
@@ -582,7 +700,8 @@
                             <div aria-labelledby="headingFour" class="accordion-collapse collapse shadow-sm"
                                 data-bs-parent="#accordionExample1" id="collapseFour">
                                 <div class="accordion-body">
-                                    <span class="text-muted">The lifeblood of your business is the
+                                    <span class="text-muted">The lifeblood of
+                                        your business is the
                                         data you generate, transform, store, and
                                         move. Take a
                                         silicon-to-cloud approach to securing
@@ -600,8 +719,7 @@
                             <div class="row align-items-center justify-content-between">
                                 <div class="col-lg-12">
                                     <div class="custom-form p-3">
-                                        <h5 class="pb-5 text-primary">Ask your
-                                            different questions :</h5>
+                                        <h5 class="pb-5 text-primary">Ask your different questions :</h5>
                                         <form>
                                             <div class="row">
                                                 <div class="col-lg-6">
@@ -664,39 +782,50 @@
                     </div>
                     <div class="section-title-border mt-3"></div>
                     <div class="client-title mt-4">
-                        <h2 class="fw-semibold text-primary">What Our Clients Say</h2>
+                        <h2 class="fw-semibold text-primary">What Our Clients
+                            Say</h2>
                     </div>
                 </div>
             </div>
             <div class="row align-items-center justify-content-center text-center g-4 mt-4">
                 <div class="col-lg-2 col-6">
-                    <a href="/#!">
-                        <img alt="" class="img-fluid brand-logo" src="/images/logo/amazon.svg" />
+                    <a href="javascript:void(0)">
+                        <img alt="" class="img-fluid brand-logo" src="/images/Transpower Logo.png" />
                     </a>
                 </div>
                 <div class="col-lg-2 col-6">
-                    <a href="/#!">
-                        <img alt="" class="img-fluid brand-logo" src="/images/logo/google.svg" />
+                    <a href="javascript:void(0)">
+                        <img alt="" class="img-fluid brand-logo" src="/images/WHITE-CITY-GENUINE-LOGO-2.png" />
                     </a>
                 </div>
                 <div class="col-lg-2 col-6">
-                    <a href="/#!">
-                        <img alt="" class="img-fluid brand-logo" src="/images/logo/lenovo.svg" />
+                    <a href="javascript:void(0)">
+                        <img alt="" class="img-fluid brand-logo" src="/images/LOGO Transparent.png" />
                     </a>
                 </div>
                 <div class="col-lg-2 col-6">
-                    <a href="/#!">
-                        <img alt="" class="img-fluid brand-logo" src="/images/logo/paypal.svg" />
+                    <a href="javascript:void(0)">
+                        <img alt="" class="img-fluid brand-logo" src="/images/canvasized victoria  logo.png" />
                     </a>
                 </div>
                 <div class="col-lg-2 col-6">
-                    <a href="/#!">
-                        <img alt="" class="img-fluid brand-logo" src="/images/logo/shopify.svg" />
+                    <a href="javascript:void(0)">
+                        <img alt="" class="img-fluid brand-logo" src="/images/Farmer's Basket Logo-1.png" />
                     </a>
                 </div>
                 <div class="col-lg-2 col-6">
-                    <a href="/#!">
-                        <img alt="" class="img-fluid brand-logo" src="/images/logo/spotify.svg" />
+                    <a href="javascript:void(0)">
+                        <img alt="" class="img-fluid brand-logo" src="/images/Main-logo.png" />
+                    </a>
+                </div>
+                <div class="col-lg-2 col-6">
+                    <a href="javascript:void(0)">
+                        <img alt="" class="img-fluid brand-logo" src="/images/Transparent Logo.png" />
+                    </a>
+                </div>
+                <div class="col-lg-2 col-6">
+                    <a href="javascript:void(0)">
+                        <img alt="" class="img-fluid brand-logo" src="/images/BUILDSOL LOGO-1.png" />
                     </a>
                 </div>
             </div>
@@ -712,9 +841,11 @@
                                         src="/images/users/avatar-1.jpg" width="50px" />
                                     <div class="icon-text-2 ms-3">
                                         <i class="ri-chat-check-line text-success"></i>
-                                        <p class="text-muted m-0 fs-xl">"Our task must be to free ourselves by widening
-                                            our site circle of
-                                            compassion to embrace all living creatures."</p>
+                                        <p class="text-muted m-0 fs-xl">"Our
+                                            task must be to free ourselves by
+                                            widening our site circle of
+                                            compassion to embrace all living
+                                            creatures."</p>
                                         <ul class="text-warning my-2 d-flex ps-0">
                                             <li><i class="ri-star-s-fill"></i>
                                             </li>
@@ -727,7 +858,8 @@
                                             <li><i class="ri-star-s-fill"></i>
                                             </li>
                                         </ul>
-                                        <h5 class="fw-semibold mb-0 mt-2 text-primary">Metho k. Partho</h5>
+                                        <h5 class="fw-semibold mb-0 mt-2 text-primary">
+                                            Metho k. Partho</h5>
                                         <small class="text-muted">Canada</small>
                                     </div>
                                 </div>
@@ -739,9 +871,11 @@
                                         src="/images/users/avatar-2.jpg" width="50px" />
                                     <div class="icon-text-2 ms-3">
                                         <i class="ri-chat-check-line text-success"></i>
-                                        <p class="text-muted m-0 fs-xl">"Our task must be to free ourselves by widening
-                                            our site circle of
-                                            compassion to embrace all living creatures."</p>
+                                        <p class="text-muted m-0 fs-xl">"Our
+                                            task must be to free ourselves by
+                                            widening our site circle of
+                                            compassion to embrace all living
+                                            creatures."</p>
                                         <ul class="text-warning my-2 d-flex ps-0">
                                             <li><i class="ri-star-s-fill"></i>
                                             </li>
@@ -754,8 +888,10 @@
                                             <li><i class="ri-star-s-fill"></i>
                                             </li>
                                         </ul>
-                                        <h5 class="fw-semibold mb-0 mt-2 text-primary">Merry J. Wyman</h5>
-                                        <small class="text-muted">New Zealand</small>
+                                        <h5 class="fw-semibold mb-0 mt-2 text-primary">
+                                            Merry J. Wyman</h5>
+                                        <small class="text-muted">New
+                                            Zealand</small>
                                     </div>
                                 </div>
                                 <!--end testi-box-->
@@ -766,9 +902,11 @@
                                         src="/images/users/avatar-3.jpg" width="50px" />
                                     <div class="icon-text-2 ms-3">
                                         <i class="ri-chat-check-line text-success"></i>
-                                        <p class="text-muted m-0 fs-xl">"Our task must be to free ourselves by widening
-                                            our site circle of
-                                            compassion to embrace all living creatures."</p>
+                                        <p class="text-muted m-0 fs-xl">"Our
+                                            task must be to free ourselves by
+                                            widening our site circle of
+                                            compassion to embrace all living
+                                            creatures."</p>
                                         <ul class="text-warning my-2 d-flex ps-0">
                                             <li><i class="ri-star-s-fill"></i>
                                             </li>
@@ -781,7 +919,8 @@
                                             <li><i class="ri-star-s-fill"></i>
                                             </li>
                                         </ul>
-                                        <h5 class="fw-semibold mb-0 mt-2 text-primary">Anthom Bu Spar</h5>
+                                        <h5 class="fw-semibold mb-0 mt-2 text-primary">
+                                            Anthom Bu Spar</h5>
                                         <small class="text-muted">Australia</small>
                                     </div>
                                 </div>
@@ -793,9 +932,11 @@
                                         src="/images/users/avatar-5.jpg" width="50px" />
                                     <div class="icon-text-2 ms-3">
                                         <i class="ri-chat-check-line text-success"></i>
-                                        <p class="text-muted m-0 fs-xl">"Our task must be to free ourselves by widening
-                                            our site circle of
-                                            compassion to embrace all living creatures."</p>
+                                        <p class="text-muted m-0 fs-xl">"Our
+                                            task must be to free ourselves by
+                                            widening our site circle of
+                                            compassion to embrace all living
+                                            creatures."</p>
                                         <ul class="text-warning my-2 d-flex ps-0">
                                             <li><i class="ri-star-s-fill"></i>
                                             </li>
@@ -808,8 +949,10 @@
                                             <li><i class="ri-star-s-fill"></i>
                                             </li>
                                         </ul>
-                                        <h5 class="fw-semibold mb-0 mt-2 text-primary">Jhon k. Matro</h5>
-                                        <small class="text-muted">Marshall Islands</small>
+                                        <h5 class="fw-semibold mb-0 mt-2 text-primary">
+                                            Jhon k. Matro</h5>
+                                        <small class="text-muted">Marshall
+                                            Islands</small>
                                     </div>
                                 </div>
                                 <!--end testi-box-->
@@ -822,7 +965,8 @@
             </div>
         </div>
     </section>
-    <section class="cta-section py-5 z-1" id="contacts">
+
+    <!-- <section class="cta-section py-5 z-1" id="contacts">
         <div class="container">
             <div class="row align-items-center justify-content-center">
                 <div class="col-lg-7">
@@ -841,45 +985,43 @@
             src="/images/sssplatter.svg" />
         <img alt="" class="img-fluid position-absolute top-0 start-0 translate-middle z-n1"
             src="/images/sssplatter.svg" />
-    </section>
-    <footer class="section footer-part-3 py-5 footer-part">
+    </section> -->
+
+    <!-- FOOTER -->
+    <footer class="section footer-part-3 py-5 footer-part" id="contacts">
         <div class="container">
             <div class="row my-5 justify-content-between">
                 <div class="col-lg-3 align-self-start">
                     <div class="logo">
-                        <a class="fs-4 text-light ls-1 fw-bold" href="/#!"><i
-                                class="ri-registered-fill text-success fs-3 me-1"></i>RENOL
+                        <a class="fs-4 text-light ls-1 fw-bold" href="/">
+                            <img src="/images/logo/proserp-white.png" alt="proserp logo" width="100px" height="auto">
                         </a>
                     </div>
                     <div class="d-flex mt-4">
                         <i class="ri-phone-fill text-light"></i>
-                        <a class="text-white-50 ms-3 fs-xl" href="/#!">- 123-4567-890</a>
+                        <a class="text-white-50 ms-3 fs-xl" href="tel:+255746917817">-
+                            +255 746 917 817</a>
                     </div>
                     <div class="d-flex mt-3">
                         <i class="ri-mail-send-fill text-light"></i>
-                        <a class="text-white-50 ms-3 fs-xl" href="/#!">- supprot@gmail.com</a>
+                        <a class="text-white-50 ms-3 fs-xl" href="mailto:Info@prosafrica.co.tz">-
+                            Info@prosafrica.co.tz</a>
                     </div>
                     <div class="footer-icon-3 ms-lg-auto me-lg-5">
                         <ul class="d-flex mt-4">
                             <li>
-                                <a class="text-light me-2" href="/#!"><i
+                                <a class="text-light me-2" href="#" target="_blank"><i
                                         class="ri-facebook-fill p-2 border rounded-circle text-white-50"></i></a>
                             </li>
                             <li>
-                                <a class="text-light mx-2" href="/#!"><i
+                                <a class="text-light mx-2"
+                                    href="https://www.instagram.com/pros_erp?igsh=MXg1eTRoYmttc2Rtbw=="
+                                    target="_blank"><i
                                         class="ri-instagram-fill p-2 border rounded-circle text-white-50"></i></a>
                             </li>
                             <li>
-                                <a class="text-light mx-2" href="/#!"><i
+                                <a class="text-light mx-2" href="/#!" target="_blank"><i
                                         class="ri-twitter-fill p-2 border rounded-circle text-white-50"></i></a>
-                            </li>
-                            <li>
-                                <a class="text-light mx-2" href="/#!"><i
-                                        class="ri-github-fill p-2 border rounded-circle text-white-50"></i></a>
-                            </li>
-                            <li>
-                                <a class="text-light mx-2" href="/#!"><i
-                                        class="ri-google-fill p-2 border rounded-circle text-white-50"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -887,11 +1029,10 @@
                 <div class="col-lg-2 col-md-4 col-12">
                     <h5 class="text-light">Pages : </h5>
                     <ul class="list-unstyled mt-4">
-                        <li><a class="text-white-50" href="/#!">About</a></li>
-                        <li><a class="text-white-50" href="/#!">Brand</a></li>
-                        <li><a class="text-white-50" href="/#!">Services</a></li>
-                        <li><a class="text-white-50" href="/#!"> Price</a></li>
-                        <li><a class="text-white-50" href="/#!">Testimonial </a></li>
+                        <li><a class="text-white-50" href="/">Home</a></li>
+                        <li><a class="text-white-50" href="#about">About</a></li>
+                        <li><a class="text-white-50" href="#industries">Industries</a></li>
+                        <li><a class="text-white-50" href="#testimonials"> Testimonials</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-2 col-md-4 col-12">
@@ -906,9 +1047,6 @@
                         </li>
                         <li><a class="text-white-50" href="/#!">
                                 Changelog</a></li>
-                        <li><a class="text-white-50" href="/#!">Components
-                            </a>
-                        </li>
                     </ul>
                 </div>
                 <div class="col-lg-3">
@@ -921,7 +1059,8 @@
                     </div>
                     <div class="d-flex mt-4">
                         <i class="ri-twitter-fill fs-5 me-3 text-success"></i>
-                        <p class="text-white-50">Greater pleasures el esndures pains avoid welcomed avoided pariatu.</p>
+                        <p class="text-white-50">Greater pleasures el esndures
+                            pains avoid welcomed avoided pariatu.</p>
                     </div>
                     <a class="text-light" href="/#!">Learn More !</a>
                 </div>
@@ -934,17 +1073,17 @@
                 ©
                 <script>
                     document.write(new Date().getFullYear())
-                </script> Renol - <a class="text-white-50 text-decoration-underline" href="/#">Themesdesign
+                </script> ProsAfrica - <a class="text-white-50 text-decoration-underline" href="/">ProsERP
                 </a>
             </div>
         </div>
     </div>
     <script src="/js/bootstrap.bundle.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js">
+    </script>
     <script src="/js/swiper-bundle.min.js"></script>
     <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
     <script src="/js/app.js"></script>
-    <script src="/js/star.js"></script>
     <script src="/js/swipar.js"></script>
 </body>
 
