@@ -453,7 +453,7 @@ h6 {
   width: 45%;
   height: auto;
   object-fit: cover;
-  background-color: #fff;
+  /* background-color: #fff; */
 }
 .bg-home-4 .main-man .main-man-content i {
   font-size: 11px;
@@ -679,7 +679,7 @@ h6 {
 
 .brand-logo {
   max-width: 100px;
-  opacity: 0.5;
+  opacity: 1;
 }
 
 .accordion .accordion-item {
