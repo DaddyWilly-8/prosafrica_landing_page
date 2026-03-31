@@ -5,3 +5,9 @@ gulp.task('default', function(done) {
   console.log('Gulp is running.');
   done();
 });
+
+// Dummy build task for Vercel
+gulp.task('build', function(done) {
+  console.log('Build task executed.');
+  done();
+});
