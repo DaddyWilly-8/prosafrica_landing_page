@@ -80,7 +80,8 @@
                             <div class="col-lg-12">
                                 <div class="custom-form p-3">
                                     <!-- <h5 class="pb-5 text-primary">Send an inquiry</h5> -->
-                                    <form style="background-color: white;">
+                                    <form action="/get-started" method="POST" style="background-color: white;"
+                                        id="inquiryForm">
                                         <div class="row">
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
@@ -109,7 +110,7 @@
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <select class="form-select" aria-label="Default select industry"
-                                                        id="industry-select">
+                                                        name="industry" id="industry-select">
                                                         <option value="" selected>Select Industry</option>
                                                         <option value="manufacturing">Manufacturing</option>
                                                         <option value="trade">Trade</option>
@@ -134,6 +135,25 @@
                                             </div>
                                             <!-- col end -->
                                         </div>
+
+                                        <div class="row">
+                                            <!-- col end -->
+                                            <div class="col-lg-12">
+                                                <div class="mb-3">
+                                                    <button
+                                                        class="btn btn-primary btn-lg text-light w-100">Submit</button>
+                                                </div>
+                                            </div>
+                                            <!-- col end -->
+                                        </div>
+                                        <% if (typeof success !=='undefined' && success) { %>
+                                            <div class="alert alert-success">Inquiry sent successfully!</div>
+                                            <% } %>
+                                                <% if (typeof error !=='undefined' && error) { %>
+                                                    <div class="alert alert-danger">
+                                                        <%= error %>
+                                                    </div>
+                                                    <% } %>
                                     </form>
                                 </div>
                             </div>
@@ -250,6 +270,7 @@
     <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
     <script src="/js/app.js"></script>
     <script src="/js/swipar.js"></script>
+    <!-- <script src="/js/getstarted.js"></script> -->
     <script>
         // toggle indsutry text input
         let industry_select = document.getElementById('industry-select')
@@ -265,7 +286,6 @@
                 industry_text.setAttribute('disabled', 'disabled')
             }
         })
-
     </script>
 </body>
 

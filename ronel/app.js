@@ -1,3 +1,4 @@
+require('dotenv').config({ path: require('path').join(__dirname, '.env') });
 const express = require('express');
 const app = express();
 const path = require('path');
@@ -14,6 +15,7 @@ app.use(upload());
 app.use(express.json());
 app.use(session({ resave: false, saveUninitialized: true, secret: 'nodedemo' }));
 app.use(cookieParser());
+app.use(express.urlencoded({ extended: true }))
 
 app.use(express.static(__dirname + '/public'));
 
