@@ -1,1 +1,11 @@
+<<<<<<< HEAD
 /node_modules
+=======
+/node_modules
+
+# env file
+.env
+.env.local
+
+EMAIL_IMPLEMENTATION.md
+>>>>>>> d9afdae35a279c4823e988f9a0915c89c0844e74

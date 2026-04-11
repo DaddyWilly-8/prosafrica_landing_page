@@ -80,7 +80,8 @@
                             <div class="col-lg-12">
                                 <div class="custom-form p-3">
                                     <!-- <h5 class="pb-5 text-primary">Send an inquiry</h5> -->
-                                    <form style="background-color: white;">
+                                    <form action="/get-started" method="POST" style="background-color: white;"
+                                        id="inquiryForm">
                                         <div class="row">
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
@@ -109,7 +110,7 @@
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <select class="form-select" aria-label="Default select industry"
-                                                        id="industry-select">
+                                                        name="industry" id="industry-select">
                                                         <option value="" selected>Select Industry</option>
                                                         <option value="manufacturing">Manufacturing</option>
                                                         <option value="trade">Trade</option>
@@ -134,6 +135,27 @@
                                             </div>
                                             <!-- col end -->
                                         </div>
+
+                                        <div class="row">
+                                            <!-- col end -->
+                                            <div class="col-lg-12">
+                                                <div class="mb-3">
+                                                    <button
+                                                        class="btn btn-primary btn-lg text-light w-100">Submit</button>
+                                                </div>
+                                            </div>
+                                            <!-- col end -->
+                                        </div>
+                                        <% if (success) { %>
+                                            <div class="alert alert-success">
+                                                <%= success %>
+                                            </div>
+                                            <% } %>
+                                                <% if (error) { %>
+                                                    <div class="alert alert-danger">
+                                                        <%= error %>
+                                                    </div>
+                                                    <% } %>
                                     </form>
                                 </div>
                             </div>
@@ -146,10 +168,8 @@
         </div>
     </section>
 
-
-
     <!-- FOOTER -->
-    <footer class="section footer-part-3 py-5 footer-part">
+    <footer class="section footer-part-3 py-5 footer-part" id="contacts">
         <div class="container">
             <div class="row my-5 justify-content-between">
                 <div class="col-lg-3 align-self-start">
@@ -160,13 +180,12 @@
                     </div>
                     <div class="d-flex mt-4">
                         <i class="ri-phone-fill text-light"></i>
-                        <a class="text-white-50 ms-3 fs-xl" href="tel:+255746917817">-
-                            +255 746 917 817</a>
+                        <a class="text-white-50 ms-3 fs-xl" href="tel:+255746917817">+255 746 917 817</a>
                     </div>
                     <div class="d-flex mt-3">
                         <i class="ri-mail-send-fill text-light"></i>
-                        <a class="text-white-50 ms-3 fs-xl" href="mailto:Info@prosafrica.co.tz">-
-                            Info@prosafrica.co.tz</a>
+                        <a class="text-white-50 ms-3 fs-xl"
+                            href="mailto:info@prosafrica.co.tz">info@prosafrica.co.tz</a>
                     </div>
                     <div class="footer-icon-3 ms-lg-auto me-lg-5">
                         <ul class="d-flex mt-4">
@@ -197,7 +216,7 @@
                     </ul>
                 </div>
                 <div class="col-lg-2 col-md-4 col-12">
-                    <h5 class="text-light fs-5">Usefull Links :</h5>
+                    <h5 class="text-light fs-5">Useful Links :</h5>
                     <ul class="list-unstyled mt-4">
                         <li><a class="text-white-50" href="/#!">Terms
                                 of
@@ -208,9 +227,6 @@
                         </li>
                         <li><a class="text-white-50" href="/#!">
                                 Changelog</a></li>
-                        <li><a class="text-white-50" href="/#!">Components
-                            </a>
-                        </li>
                     </ul>
                 </div>
                 <div class="col-lg-3">
@@ -221,12 +237,6 @@
                             <a class="me-2" href="/#!"><i class="ri-send-plane-2-line"></i></a>
                         </form>
                     </div>
-                    <div class="d-flex mt-4">
-                        <i class="ri-twitter-fill fs-5 me-3 text-success"></i>
-                        <p class="text-white-50">Greater pleasures el esndures
-                            pains avoid welcomed avoided pariatu.</p>
-                    </div>
-                    <a class="text-light" href="/#!">Learn More !</a>
                 </div>
             </div>
         </div>
@@ -236,8 +246,8 @@
             <div class="copy-info text-center text-white-50">
                 ©
                 <script>
-                    document.write(new Date().getFullYear())
-                </script> ProsAfrica - <a class="text-white-50 text-decoration-underline" href="/">ProsERP
+                    document.write(new Date().getFullYear()) 
+                </script><a class="text-white-50 text-decoration-underline" href="/"> ProsERP
                 </a>
             </div>
         </div>
@@ -250,6 +260,7 @@
     <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
     <script src="/js/app.js"></script>
     <script src="/js/swipar.js"></script>
+    <!-- <script src="/js/getstarted.js"></script> -->
     <script>
         // toggle indsutry text input
         let industry_select = document.getElementById('industry-select')
@@ -265,7 +276,6 @@
                 industry_text.setAttribute('disabled', 'disabled')
             }
         })
-
     </script>
 </body>
 
