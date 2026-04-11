@@ -146,10 +146,12 @@
                                             </div>
                                             <!-- col end -->
                                         </div>
-                                        <% if (typeof success !=='undefined' && success) { %>
-                                            <div class="alert alert-success">Inquiry sent successfully!</div>
+                                        <% if (success) { %>
+                                            <div class="alert alert-success">
+                                                <%= success %>
+                                            </div>
                                             <% } %>
-                                                <% if (typeof error !=='undefined' && error) { %>
+                                                <% if (error) { %>
                                                     <div class="alert alert-danger">
                                                         <%= error %>
                                                     </div>
@@ -166,10 +168,8 @@
         </div>
     </section>
 
-
-
     <!-- FOOTER -->
-    <footer class="section footer-part-3 py-5 footer-part">
+    <footer class="section footer-part-3 py-5 footer-part" id="contacts">
         <div class="container">
             <div class="row my-5 justify-content-between">
                 <div class="col-lg-3 align-self-start">
@@ -180,13 +180,12 @@
                     </div>
                     <div class="d-flex mt-4">
                         <i class="ri-phone-fill text-light"></i>
-                        <a class="text-white-50 ms-3 fs-xl" href="tel:+255746917817">-
-                            +255 746 917 817</a>
+                        <a class="text-white-50 ms-3 fs-xl" href="tel:+255746917817">+255 746 917 817</a>
                     </div>
                     <div class="d-flex mt-3">
                         <i class="ri-mail-send-fill text-light"></i>
-                        <a class="text-white-50 ms-3 fs-xl" href="mailto:Info@prosafrica.co.tz">-
-                            Info@prosafrica.co.tz</a>
+                        <a class="text-white-50 ms-3 fs-xl"
+                            href="mailto:info@prosafrica.co.tz">info@prosafrica.co.tz</a>
                     </div>
                     <div class="footer-icon-3 ms-lg-auto me-lg-5">
                         <ul class="d-flex mt-4">
@@ -217,7 +216,7 @@
                     </ul>
                 </div>
                 <div class="col-lg-2 col-md-4 col-12">
-                    <h5 class="text-light fs-5">Usefull Links :</h5>
+                    <h5 class="text-light fs-5">Useful Links :</h5>
                     <ul class="list-unstyled mt-4">
                         <li><a class="text-white-50" href="/#!">Terms
                                 of
@@ -228,9 +227,6 @@
                         </li>
                         <li><a class="text-white-50" href="/#!">
                                 Changelog</a></li>
-                        <li><a class="text-white-50" href="/#!">Components
-                            </a>
-                        </li>
                     </ul>
                 </div>
                 <div class="col-lg-3">
@@ -241,12 +237,6 @@
                             <a class="me-2" href="/#!"><i class="ri-send-plane-2-line"></i></a>
                         </form>
                     </div>
-                    <div class="d-flex mt-4">
-                        <i class="ri-twitter-fill fs-5 me-3 text-success"></i>
-                        <p class="text-white-50">Greater pleasures el esndures
-                            pains avoid welcomed avoided pariatu.</p>
-                    </div>
-                    <a class="text-light" href="/#!">Learn More !</a>
                 </div>
             </div>
         </div>
@@ -256,8 +246,8 @@
             <div class="copy-info text-center text-white-50">
                 ©
                 <script>
-                    document.write(new Date().getFullYear())
-                </script> ProsAfrica - <a class="text-white-50 text-decoration-underline" href="/">ProsERP
+                    document.write(new Date().getFullYear()) 
+                </script><a class="text-white-50 text-decoration-underline" href="/"> ProsERP
                 </a>
             </div>
         </div>
