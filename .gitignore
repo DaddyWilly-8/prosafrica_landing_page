@@ -1,0 +1,7 @@
+/node_modules
+
+# env file
+.env
+.env.local
+
+EMAIL_IMPLEMENTATION.md
