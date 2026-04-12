@@ -10,8 +10,8 @@ route.get('/get-started', (req, res, next) => {
     res.render('pages/contact/get-started');
 });
 
-// contact routes
 
+// contact routes
 route.post('/get-started', submitInquiry);
 route.post('/new-question', submitQuestion);
 
