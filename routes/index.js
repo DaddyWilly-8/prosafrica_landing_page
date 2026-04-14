@@ -11,7 +11,7 @@ route.get('/get-started', (req, res, next) => {
 });
 
 
-// contact routes
+// form routes
 route.post('/get-started', submitInquiry);
 route.post('/new-question', submitQuestion);
 

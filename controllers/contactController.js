@@ -1,10 +1,10 @@
 const { sendInquiryEmail, sendQuestionEmail } = require('../services/mailService');
 
 const submitInquiry = async (req, res) => {
-    const { email, phone, organization_name, industry, description } = req.body;
+    const { full_name, email, phone, organization_name, industry, description } = req.body;
 
     try {
-        const sendResponse = await sendInquiryEmail({ email, phone, organization: organization_name, industry, description });
+        const sendResponse = await sendInquiryEmail({ full_name, email, phone, organization: organization_name, industry, description });
         console.log('sendResponse:', sendResponse);
         req.flash('success', 'Inquiry sent successfully!');
         res.redirect('/get-started');
