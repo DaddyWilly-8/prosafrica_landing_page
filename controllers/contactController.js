@@ -5,7 +5,7 @@ const submitInquiry = async (req, res) => {
 
     try {
         const sendResponse = await sendInquiryEmail({ full_name, email, phone, organization: organization_name, industry, description });
-        console.log('sendResponse:', sendResponse);
+        // console.log('sendResponse:', sendResponse);
         req.flash('success', 'Inquiry sent successfully!');
         res.redirect('/get-started');
     } catch (err) {
